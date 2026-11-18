@@ -1,0 +1,78 @@
+/**
+ * Veloxa visual tokens, loaded by the existing shortcode asset pipeline.
+ * Legacy typography/spacing tokens remain for all consumers. Design System v1
+ * adds separate surface/color aliases used by Free cards in widget-theme.css.
+ * Existing appearance variables remain the user customization contract.
+ */
+
+.iot-dw-widget {
+	/*
+	 * Skala typografii — mnożniki względem --iot-dw-font-size (bazowy
+	 * rozmiar widgetu), nie osobne wartości px. Nazwy odpowiadają istniejącym
+	 * rozmiarom już używanym w widget-styles.css (2xs=stopka/branding,
+	 * xs=etykiety, sm=wartości list/gauge-label, lg=wartość gauge/wykresu,
+	 * xl=hero-liczba karty) — Tydzień 6 podmienia te zahardkodowane wartości
+	 * na poniższe zmienne, nie wprowadza nowej skali od zera.
+	 */
+	--iot-dw-text-2xs: 0.75em;
+	--iot-dw-text-xs: 0.85em;
+	--iot-dw-text-sm: 0.9em;
+	--iot-dw-text-md: 1em;
+	--iot-dw-text-lg: 1.4em;
+	--iot-dw-text-xl: 2em;
+
+	/* Wagi czcionki — nazwane, nie gołe liczby, żeby Tydzień 6 nie zgadywał, która wartość do czego. */
+	--iot-dw-weight-regular: 400;
+	--iot-dw-weight-medium: 500;
+	--iot-dw-weight-semibold: 600;
+	--iot-dw-weight-bold: 700;
+
+	/*
+	 * Skala odstępów (padding/gap/margin) — też w `em`, z tego samego powodu
+	 * co skala typografii. 3xs/2xs pokrywają drobne odstępy (etykieta pod
+	 * wartością, jednostka obok liczby), lg/xl pokrywają padding
+	 * karty/siatki i odstęp między widgetami w gridzie.
+	 */
+	--iot-dw-space-3xs: 0.15em;
+	--iot-dw-space-2xs: 0.25em;
+	--iot-dw-space-xs: 0.35em;
+	--iot-dw-space-sm: 0.5em;
+	--iot-dw-space-md: 0.75em;
+	--iot-dw-space-lg: 1em;
+	--iot-dw-space-xl: 1.5em;
+
+	/*
+	 * Promień dla WEWNĘTRZNYCH elementów chrome (np. tło błędu w liście/
+	 * siatce), niezależny od --iot-dw-radius (to zostaje wyłącznie
+	 * user-facing promień karty/listy/sparkline/siatki, patrz
+	 * IOT_DW_Style_Settings) — dwa osobne pokrętła, bo są dwoma różnymi
+	 * rzeczami: jedno użytkownik świadomie ustawia w Appearance, drugie to
+	 * wewnętrzny detal stylu, którego nikt nie powinien musieć konfigurować.
+	 */
+	--iot-dw-radius-sm: 4px;
+
+	/*
+	 * Cienie/elevation — trzy poziomy, od subtelnego (odróżnienie karty od
+	 * tła strony) po wyraźny (stan hover/focus, jeśli Tydzień 6 go doda).
+	 * Niska krycistość czerni działa rozsądnie na jasnym TLE; na ciemnym
+	 * tle (personalizacja v1.5) cień robi się prawie niewidoczny, co jest
+	 * akceptowalnym, nieszkodliwym zachowaniem cieni (nie tekstu/kontrastu),
+	 * nie regresją.
+	 */
+	--iot-dw-shadow-sm: 0 1px 2px rgba( 0, 0, 0, 0.06 );
+	--iot-dw-shadow-md: 0 2px 8px rgba( 0, 0, 0, 0.08 );
+	--iot-dw-shadow-lg: 0 8px 24px rgba( 0, 0, 0, 0.12 );
+}
+
+/* Veloxa Design System v1: independent product tokens; legacy scales remain for Pro. */
+.iot-dw-widget {
+	--iot-dw-surface: var(--iot-dw-bg, #ffffff);
+	--iot-dw-foreground: var(--iot-dw-text, #17212b);
+	--iot-dw-muted: color-mix(in srgb, var(--iot-dw-foreground) 80%, var(--iot-dw-surface));
+	--iot-dw-border: color-mix(in srgb, var(--iot-dw-foreground) 15%, var(--iot-dw-surface));
+	--iot-dw-brand: var(--iot-dw-accent, #3478c5);
+	--iot-dw-warning: #8b5a00;
+	--iot-dw-danger: #ad343e;
+	--iot-dw-card-space: 1.25em;
+	--iot-dw-card-shadow: 0 2px 7px rgb(15 30 45 / 5%);
+}

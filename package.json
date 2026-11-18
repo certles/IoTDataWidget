@@ -1,0 +1,24 @@
+{
+	"name": "iot-data-widget",
+	"private": true,
+	"description": "Środowisko developerskie wtyczki IoT Data Widget dla WordPress.",
+	"scripts": {
+		"env:up": "bash bin/dev-up.sh",
+		"env:down": "bash bin/dev-down.sh",
+		"wp-env": "wp-env",
+		"build": "wp-scripts build --source-path=blocks/iot-widget/src --output-path=blocks/iot-widget/build",
+		"start": "wp-scripts start --source-path=blocks/iot-widget/src --output-path=blocks/iot-widget/build",
+		"demo:api": "node scripts/demo-api-server.js",
+		"demo:ha": "node scripts/demo-ha-server.js",
+		"demo:mqtt": "bash scripts/demo-mqtt-setup.sh",
+		"demo:record": "node scripts/record-demo.js",
+		"demo:convert": "ffmpeg -i demo-videos/*.webm -vf scale=1280:720 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p demo-final.mp4 -y",
+		"test:e2e": "playwright test"
+	},
+	"devDependencies": {
+		"@playwright/test": "1.63.0",
+		"@wordpress/env": "^11.0.0",
+		"@wordpress/scripts": "^33.0.0",
+		"playwright": "1.63.0"
+	}
+}

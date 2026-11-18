@@ -1,0 +1,240 @@
+/**
+ * Wspólny arkusz CSS ekranów admina (v1.7 Tydzień 3 toolkit UI). Zmienne
+ * (odstępy, promień zaokrąglenia) i style TYLKO dla nowych elementów
+ * toolkitu (partiale notice.php/empty-state.php/data-table.php) — nigdy dla
+ * rzeczy, które WP admin już stylizuje sam (`.notice`, `.widefat`, `.button`,
+ * `.form-table`) — patrz Ustalenie #2/#5 w docs/archiwum/mvp-v1-7-plan.md: nie
+ * duplikować wzorców WP tam, gdzie już coś dobrego oferuje.
+ *
+ * Promień zaokrąglenia (3px) dobrany pod natywny `.button` WP, nie pod
+ * front-endowy widget (public/css/widget-styles.css używa 8px domyślnie —
+ * to świadomie inna, osobna skala, bo to inny kontekst wizualny: front vs
+ * wp-admin).
+ */
+
+:root {
+	--iot-dw-admin-space-xs: 4px;
+	--iot-dw-admin-space-sm: 8px;
+	--iot-dw-admin-space-md: 16px;
+	--iot-dw-admin-space-lg: 24px;
+	--iot-dw-admin-radius: 3px;
+}
+
+.iot-dw-admin-empty-state {
+	text-align: center;
+	padding: var(--iot-dw-admin-space-lg) var(--iot-dw-admin-space-md);
+	margin: var(--iot-dw-admin-space-md) 0;
+	border: 1px dashed #c3c4c7;
+	border-radius: var(--iot-dw-admin-radius);
+	background: #fff;
+}
+
+.iot-dw-admin-empty-state__icon {
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto var(--iot-dw-admin-space-sm);
+	font-size: 32px;
+	color: #c3c4c7;
+}
+
+.iot-dw-admin-empty-state__message {
+	margin: 0 0 var(--iot-dw-admin-space-sm);
+	color: #646970;
+	font-size: 14px;
+}
+
+.iot-dw-admin-empty-state p:last-child {
+	margin-bottom: 0;
+}
+
+/**
+ * Notice z trwałym (server-side) dismissem — inny mechanizm niż natywny
+ * `.is-dismissible` (czysto JS, do następnego przeładowania), więc świadomie
+ * NIE jest częścią partiala notice.php (patrz jego docblock). Używane przez
+ * checklistę "next steps" (v1.4 Tydzień 7) na stronie Connections — v1.7
+ * Tydzień 4 przenosi tu inline `style=""`, które audyt (docs/archiwum/audyt-ui-v1-7.md)
+ * znalazł rozrzucone bezpośrednio w widoku.
+ */
+.iot-dw-admin-notice--persistent-dismiss {
+	position: relative;
+	padding-right: 38px;
+}
+
+.iot-dw-admin-notice--persistent-dismiss h2 {
+	margin-top: var(--iot-dw-admin-space-sm);
+}
+
+.iot-dw-admin-notice--persistent-dismiss ul {
+	list-style: disc;
+	margin-left: var(--iot-dw-admin-space-lg);
+}
+
+.iot-dw-admin-notice--persistent-dismiss .notice-dismiss {
+	text-decoration: none;
+}
+
+/**
+ * Lista wewnątrz `.notice` (błędy walidacji, wyniki importu itd.) — audyt
+ * (docs/archiwum/audyt-ui-v1-7.md) znalazł identyczny inline `style="list-style: disc;
+ * margin-left: 1.5em;"` powtórzony osobno w 6 miejscach (formularze
+ * połączeń/alertów/raportów e-mail, strona Settings) — jeden wspólny
+ * utility class zamiast sześciu kopii tego samego stylu.
+ */
+.iot-dw-admin-notice-list {
+	list-style: disc;
+	margin-left: var(--iot-dw-admin-space-lg);
+}
+
+/**
+ * Notice osadzony wewnątrz komórki `.form-table` (np. ostrzeżenie o trybie
+ * MQTT listenera w connector-fields.php) — WP's own `.notice.inline` resets
+ * most spacing already, ale zostaje bez odstępów wcale; ten wariant dodaje
+ * z powrotem niewielki, spójny padding zamiast inline `style=""`.
+ */
+.iot-dw-admin-notice--inline {
+	margin: 0;
+	padding: var(--iot-dw-admin-space-sm) var(--iot-dw-admin-space-md);
+}
+
+/**
+ * Kreator pierwszego uruchomienia (v1.7 Tydzień 5) — `iot-dw-wizard` istniała
+ * w markupie od v1.4, ale bez ŻADNEJ definicji CSS w całym repo (martwy
+ * hook, patrz docs/archiwum/audyt-ui-v1-7.md) — reszta klas niżej to pierwsze realne
+ * style dla kreatora, zamiast inline `style=""` rozrzuconego po każdym kroku.
+ */
+.iot-dw-wizard__options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--iot-dw-admin-space-md);
+}
+
+.iot-dw-wizard__preview-box {
+	max-width: 480px;
+	padding: var(--iot-dw-admin-space-md);
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: var(--iot-dw-admin-radius);
+}
+
+.iot-dw-wizard__shortcode {
+	display: inline-block;
+	padding: var(--iot-dw-admin-space-xs) var(--iot-dw-admin-space-sm);
+	background: #f0f0f1;
+	border-radius: var(--iot-dw-admin-radius);
+}
+
+/**
+ * Lista checkboxów Entity Browser w Kroku 3 (kreator multi-entity, v1.9
+ * Tydzień 3) — zastępuje dawny <select size="10"> (jeden wybór); przewijany
+ * kontener tej samej wysokości/szerokości co poprzedni, żeby układ strony
+ * się nie przesunął.
+ */
+.iot-dw-wizard__entity-list {
+	max-width: 480px;
+	max-height: 260px;
+	overflow-y: auto;
+	padding: var(--iot-dw-admin-space-sm) var(--iot-dw-admin-space-md);
+	background: #fff;
+	border: 1px solid #8c8f94;
+	border-radius: var(--iot-dw-admin-radius);
+}
+
+.iot-dw-wizard__entity-row {
+	display: block;
+	padding: 2px 0;
+}
+
+/**
+ * Jedna karta na zaznaczoną encję w Kroku 4 (kreator multi-entity, v1.9
+ * Tydzień 5) — odstęp między kolejnymi kartami, kiedy jest ich kilka.
+ */
+.iot-dw-wizard__entity-preview {
+	margin-bottom: var(--iot-dw-admin-space-lg);
+}
+
+/**
+ * Wyróżnienie wiersza data-table.php, np. połączenie z persystentnymi
+ * błędami na stronie Diagnostyki (v1.6 Tydzień 4, przeniesione z inline
+ * `style="background:#fcf0f1;"` w v1.7 Tydzień 5) — ten sam odcień co
+ * natywne `.notice-error`/`.iot-dw-widget--error`, żeby "błąd" wyglądał
+ * tak samo wszędzie w produkcie.
+ */
+.iot-dw-admin-table-row--error {
+	background: #fcf0f1;
+}
+
+/**
+ * Kolumna etykiety w tabeli właściwości (np. sekcja "Environment" strony
+ * Diagnostyki) — `.form-table` WP ma taką szerokość dla `<th>` wbudowaną,
+ * `.widefat` nie, więc dodajemy ją tu zamiast inline `style="width:220px;"`.
+ */
+.iot-dw-admin-table__label-col {
+	width: 220px;
+}
+
+/**
+ * Lista wewnątrz komórki tabeli właściwości (np. "Other active plugins").
+ */
+.iot-dw-admin-table-cell-list {
+	margin: 0;
+	padding-left: 1.2em;
+	list-style: disc;
+}
+
+/**
+ * Status obok przycisku "Copy diagnostic report" (v1.6 Tydzień 6) — kolor
+ * sukcesu spójny z resztą produktu (`.notice-success`/`.iot-dw-widget--ok`).
+ */
+.iot-dw-admin-copy-status {
+	margin-left: var(--iot-dw-admin-space-sm);
+	color: #008a20;
+	font-weight: 600;
+}
+
+/**
+ * Status kolorowy — jeden wspólny zestaw dla "OK"/"Active" (Diagnostyka,
+ * Licencja), "Error"/"Inactive", "warning" (crony) i "muted" ("No data yet"),
+ * zamiast osobnego inline `color:` przy każdym wystąpieniu w każdym ekranie
+ * (v1.7 Tydzień 5 — patrz docs/archiwum/audyt-ui-v1-7.md, "Wszystkie 4 ekrany
+ * wizualnie spójne ze sobą").
+ */
+.iot-dw-admin-status--ok {
+	color: #008a20;
+	font-weight: 600;
+}
+
+.iot-dw-admin-status--error {
+	color: #d63638;
+	font-weight: 600;
+}
+
+.iot-dw-admin-status--warning {
+	color: #996800;
+	font-weight: 600;
+}
+
+.iot-dw-admin-status--muted {
+	color: #646970;
+}
+
+/**
+ * Layout strony "Appearance" (admin/views/style-settings-page.php) — formularz
+ * obok podglądu na żywo, zawijające się na wąskich ekranach (code review
+ * v1.8: były to trzy osobne inline `style=""`, teraz reużywalne klasy).
+ */
+.iot-dw-style-settings__layout {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 2em;
+}
+
+.iot-dw-style-settings__form {
+	flex: 1 1 380px;
+	min-width: 320px;
+}
+
+.iot-dw-style-settings__preview {
+	flex: 0 0 260px;
+}

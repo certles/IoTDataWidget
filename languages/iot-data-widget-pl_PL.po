@@ -1,0 +1,2786 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: IoT Data Widget 1.0.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/iot-data-widget\n"
+"Last-Translator: Rafał Strachowski\n"
+"Language-Team: Polski\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-09T19:52:20+00:00\n"
+"PO-Revision-Date: 2026-10-09 09:00+0200\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: iot-data-widget\n"
+"X-Generator: manual\n"
+
+#. Plugin Name of the plugin
+#: iot-data-widget.php
+msgid "IoT Data Widget – Home Assistant, MQTT & Smart Home Sensors"
+msgstr "IoT Data Widget – Home Assistant, MQTT i czujniki inteligentnego domu"
+
+#: admin/class-admin-page.php:80
+#: admin/class-admin-page.php:81
+msgid "IoT Data Widget"
+msgstr "IoT Data Widget"
+
+#. Description of the plugin
+#: iot-data-widget.php
+msgid "Displays live data from smart home devices (Home Assistant, REST API, MQTT, Shelly/Tasmota/ESPHome presets, Shelly Cloud) on your website via shortcode and Gutenberg block, with a guided setup wizard, a redesigned and auto-refreshing appearance, and a built-in diagnostics page. Pro adds threshold alerts, email reports, and a public embed mode."
+msgstr "Wyświetla dane na żywo z urządzeń smart home (Home Assistant, REST API, MQTT, presety Shelly/Tasmota/ESPHome, Shelly Cloud) w witrynie za pomocą shortcode'u i bloku Gutenberga. Zawiera kreator konfiguracji, nowy wygląd z automatycznym odświeżaniem i wbudowaną stronę diagnostyki. Wersja Pro dodaje alerty progowe, raporty e-mail i tryb publicznego osadzania."
+
+#. Author of the plugin
+#: iot-data-widget.php
+msgid "WPVeloxa"
+msgstr "WPVeloxa"
+
+#. Author URI of the plugin
+#: iot-data-widget.php
+msgid "https://wpveloxa.com/"
+msgstr "https://wpveloxa.com/"
+
+#: admin/class-admin-page.php:90
+#: admin/views/settings-page.php:21
+msgid "IoT Data Widget — Connections"
+msgstr "IoT Data Widget — połączenia"
+
+#: admin/class-admin-page.php:91
+#: admin/views/diagnostics.php:148
+msgid "Connections"
+msgstr "Połączenia"
+
+#: admin/class-admin-page.php:201
+msgid "Add an alert rule"
+msgstr "Dodaj regułę alertu"
+
+#: admin/class-admin-page.php:202
+msgid "Get notified by email or webhook when a value crosses a threshold."
+msgstr "Otrzymuj powiadomienia e-mailem lub webhookiem, gdy wartość przekroczy próg."
+
+#: admin/class-admin-page.php:207
+msgid "Try public embed mode"
+msgstr "Wypróbuj publiczny tryb osadzania"
+
+#: admin/class-admin-page.php:208
+msgid "Show a widget full-screen, without the site theme — great for a kiosk tablet or iframe. Open any post with a widget and look for \"Public embed\" in the sidebar."
+msgstr "Pokaż widżet na pełnym ekranie, bez motywu witryny. Sprawdza się na tablecie w trybie kiosku albo w ramce iframe. Otwórz dowolny wpis z widżetem i znajdź w panelu bocznym sekcję „Publiczne osadzenie”."
+
+#: admin/class-admin-page.php:214
+msgid "See the chart/sparkline style"
+msgstr "Zobacz styl wykresu/mini trendu"
+
+#: admin/class-admin-page.php:215
+msgid "See the chart/sparkline style (Pro)"
+msgstr "Zobacz styl wykresu/mini trendu (Pro)"
+
+#: admin/class-admin-page.php:216
+msgid "Plot value history over time instead of a single number — insert the IoT Widget block and choose \"Chart\" or \"Sparkline\"."
+msgstr "Pokaż historię wartości w czasie zamiast pojedynczej liczby. Wstaw blok IoT Widget i wybierz styl „Wykres” lub „Mini trend”."
+
+#: admin/class-admin-page.php:252
+#: admin/class-admin-page.php:268
+#: admin/class-admin-page.php:521
+#: admin/class-alert-rules-page.php:158
+#: admin/class-alert-rules-page.php:239
+#: admin/class-email-reports-page.php:151
+#: admin/class-email-reports-page.php:230
+#: admin/class-settings-page.php:215
+#: admin/class-settings-page.php:246
+#: admin/class-settings-page.php:268
+#: admin/class-settings-page.php:374
+#: admin/class-settings-page.php:442
+#: admin/class-style-settings-page.php:157
+#: includes/class-local-network.php:140
+#: includes/class-local-network.php:173
+#: includes/premium/class-history-csv-export.php:59
+msgid "Insufficient permissions."
+msgstr "Brak uprawnień."
+
+#: admin/class-admin-page.php:331
+#: includes/class-rest-api.php:530
+msgid "Unknown connection type."
+msgstr "Nieznany typ połączenia."
+
+#: admin/class-admin-page.php:444
+msgid "A valid EMQX REST API base URL is required."
+msgstr "Wymagany jest poprawny bazowy adres URL EMQX REST API."
+
+#: admin/class-admin-page.php:451
+msgid "Broker host is required."
+msgstr "Host brokera jest wymagany."
+
+#: admin/class-admin-page.php:457
+msgid "Broker port must be a number between 1 and 65535."
+msgstr "Port brokera musi być liczbą od 1 do 65535."
+
+#: admin/class-admin-page.php:480
+msgid "Unknown device type."
+msgstr "Nieznany typ urządzenia."
+
+#: admin/class-admin-page.php:484
+msgid "Device IP address is required."
+msgstr "Adres IP urządzenia jest wymagany."
+
+#: admin/class-admin-page.php:502
+msgid "A valid Shelly Cloud server address is required."
+msgstr "Wymagany jest poprawny adres serwera Shelly Cloud."
+
+#: admin/class-admin-page.php:506
+msgid "Device ID is required."
+msgstr "Identyfikator urządzenia jest wymagany."
+
+#: admin/class-admin-page.php:510
+msgid "Authorization cloud key is required."
+msgstr "Klucz autoryzacyjny (cloud key) jest wymagany."
+
+#: admin/class-alert-rules-page.php:84
+#: includes/premium/admin-views/alert-rules-page.php:19
+msgid "IoT Data Widget — Alerts"
+msgstr "IoT Data Widget — alerty"
+
+#: admin/class-alert-rules-page.php:85
+msgid "Alerts"
+msgstr "Alerty"
+
+#: admin/class-alert-rules-page.php:216
+#: admin/class-email-reports-page.php:207
+#: admin/class-settings-page.php:423
+msgid "Please choose a valid connection."
+msgstr "Wybierz poprawne połączenie."
+
+#: admin/class-alert-rules-page.php:220
+#: admin/class-email-reports-page.php:211
+#: admin/class-settings-page.php:427
+msgid "Entity is required."
+msgstr "Encja jest wymagana."
+
+#: admin/class-alert-rules-page.php:224
+msgid "A valid email address is required for the email channel."
+msgstr "Dla kanału e-mail wymagany jest poprawny adres e-mail."
+
+#: admin/class-alert-rules-page.php:228
+msgid "A valid webhook URL is required for the webhook channel."
+msgstr "Dla kanału webhook wymagany jest poprawny adres URL."
+
+#: admin/class-diagnostics-page.php:82
+#: admin/views/diagnostics.php:24
+msgid "IoT Data Widget — Diagnostics"
+msgstr "IoT Data Widget — diagnostyka"
+
+#: admin/class-diagnostics-page.php:83
+msgid "Diagnostics"
+msgstr "Diagnostyka"
+
+#: admin/class-diagnostics-page.php:113
+#: includes/class-rest-api.php:247
+msgid "Copied!"
+msgstr "Skopiowano!"
+
+#: admin/class-diagnostics-page.php:170
+msgid "IoT Data Widget — Diagnostic Report"
+msgstr "IoT Data Widget — raport diagnostyczny"
+
+#. translators: %s: current date/time in UTC, e.g. "2026-08-13 12:00:00"
+#: admin/class-diagnostics-page.php:172
+#, php-format
+msgid "Generated: %s UTC"
+msgstr "Wygenerowano: %s UTC"
+
+#: admin/class-diagnostics-page.php:175
+msgid "== Environment =="
+msgstr "== Środowisko =="
+
+#. translators: %s: PHP version, e.g. "8.1.34"
+#: admin/class-diagnostics-page.php:177
+#, php-format
+msgid "PHP version: %s"
+msgstr "Wersja PHP: %s"
+
+#. translators: %s: WordPress version, e.g. "7.0.3"
+#: admin/class-diagnostics-page.php:179
+#, php-format
+msgid "WordPress version: %s"
+msgstr "Wersja WordPress: %s"
+
+#. translators: %s: active theme name and version, e.g. "Twenty Twenty-Five 1.4"
+#: admin/class-diagnostics-page.php:181
+#, php-format
+msgid "Active theme: %s"
+msgstr "Aktywny motyw: %s"
+
+#. translators: %s: PHP memory limit, e.g. "256M"
+#: admin/class-diagnostics-page.php:183
+#, php-format
+msgid "Memory limit: %s"
+msgstr "Limit pamięci: %s"
+
+#. translators: %s: PHP max execution time in seconds, e.g. "30"
+#: admin/class-diagnostics-page.php:185
+#, php-format
+msgid "Max execution time: %ss"
+msgstr "Maksymalny czas wykonania: %ss"
+
+#. translators: %s: comma-separated list of other active plugin names, or "None"
+#: admin/class-diagnostics-page.php:188
+#, php-format
+msgid "Other active plugins: %s"
+msgstr "Pozostałe aktywne wtyczki: %s"
+
+#: admin/class-diagnostics-page.php:189
+#: admin/views/diagnostics.php:76
+msgid "None"
+msgstr "Brak"
+
+#: admin/class-diagnostics-page.php:193
+msgid "== Scheduled tasks =="
+msgstr "== Zaplanowane zadania =="
+
+#: admin/class-diagnostics-page.php:196
+#: admin/views/diagnostics.php:102
+msgid "Not scheduled"
+msgstr "Niezaplanowane"
+
+#: admin/class-diagnostics-page.php:198
+#: admin/views/diagnostics.php:104
+msgid "Scheduled, never run yet"
+msgstr "Zaplanowane, jeszcze nie uruchomione"
+
+#: admin/class-diagnostics-page.php:200
+#: admin/views/diagnostics.php:106
+msgid "Scheduled & running"
+msgstr "Zaplanowane i działa"
+
+#. translators: %s: reason the last cron run failed
+#: admin/class-diagnostics-page.php:204
+#, php-format
+msgid "Scheduled, last run failed: %s"
+msgstr "Zaplanowane, ostatnie uruchomienie nieudane: %s"
+
+#. translators: 1: task label, 2: status text, 3: next scheduled run, 4: last run time
+#: admin/class-diagnostics-page.php:214
+#, php-format
+msgid "%1$s: %2$s (next: %3$s, last: %4$s)"
+msgstr "%1$s: %2$s (kolejne: %3$s, ostatnie: %4$s)"
+
+#: admin/class-diagnostics-page.php:223
+msgid "== Connections =="
+msgstr "== Połączenia =="
+
+#: admin/class-diagnostics-page.php:225
+#: admin/class-diagnostics-page.php:270
+msgid "None configured."
+msgstr "Brak skonfigurowanych."
+
+#: admin/class-diagnostics-page.php:230
+msgid "no data received yet"
+msgstr "nie odebrano jeszcze danych"
+
+#: admin/class-diagnostics-page.php:231
+msgid "active"
+msgstr "aktywny"
+
+#: admin/class-diagnostics-page.php:231
+msgid "inactive"
+msgstr "nieaktywny"
+
+#. translators: 1: connection name, 2: connector type label, 3: push status text, 4: last received time
+#: admin/class-diagnostics-page.php:235
+#, php-format
+msgid "%1$s (%2$s): %3$s, last received %4$s"
+msgstr "%1$s (%2$s): %3$s, ostatnio odebrano %4$s"
+
+#: admin/class-diagnostics-page.php:246
+#: admin/views/diagnostics.php:208
+#: admin/views/diagnostics.php:329
+msgid "No data yet"
+msgstr "Brak danych"
+
+#: admin/class-diagnostics-page.php:247
+#: admin/views/diagnostics.php:210
+msgid "OK"
+msgstr "OK"
+
+#: admin/class-diagnostics-page.php:247
+#: admin/views/diagnostics.php:212
+msgid "Error"
+msgstr "Błąd"
+
+#. translators: 1: connection name, 2: connector type label, 3: status text, 4: consecutive error count, 5: last checked time
+#: admin/class-diagnostics-page.php:251
+#, php-format
+msgid "%1$s (%2$s): %3$s, %4$d consecutive errors, last checked %5$s"
+msgstr "%1$s (%2$s): %3$s, %4$d błędów z rzędu, ostatnio sprawdzono %5$s"
+
+#. translators: %s: last recorded error message for this connection
+#: admin/class-diagnostics-page.php:261
+#, php-format
+msgid "  Last error: %s"
+msgstr "  Ostatni błąd: %s"
+
+#: admin/class-diagnostics-page.php:268
+msgid "== Alert rules =="
+msgstr "== Reguły alertów =="
+
+#. translators: 1: connection name, 2: entity ID, 3: comparison operator (> or <), 4: threshold value, 5: "Triggered" or "Normal", 6: optional " (last triggered: ...)" note or empty string
+#: admin/class-diagnostics-page.php:277
+#, php-format
+msgid "%1$s / %2$s: %3$s %4$s — %5$s%6$s"
+msgstr "%1$s / %2$s: %3$s %4$s — %5$s%6$s"
+
+#: admin/class-diagnostics-page.php:282
+#: admin/views/diagnostics.php:252
+#: includes/premium/admin-views/alert-rules-page.php:54
+msgid "Triggered"
+msgstr "Wyzwolony"
+
+#: admin/class-diagnostics-page.php:282
+#: admin/views/diagnostics.php:253
+#: includes/premium/admin-views/alert-rules-page.php:55
+msgid "Normal"
+msgstr "Normalny"
+
+#. translators: %s: last-triggered date/time in UTC
+#: admin/class-diagnostics-page.php:285
+#, php-format
+msgid " (last triggered: %s UTC)"
+msgstr " (ostatnio wyzwolony: %s UTC)"
+
+#: admin/class-diagnostics-page.php:292
+msgid "== Recent errors =="
+msgstr "== Ostatnie błędy =="
+
+#: admin/class-diagnostics-page.php:294
+msgid "None recorded."
+msgstr "Brak zarejestrowanych."
+
+#. translators: 1: date/time in UTC, 2: error source, 3: error message
+#: admin/class-diagnostics-page.php:299
+#, php-format
+msgid "[%1$s UTC] %2$s: %3$s"
+msgstr "[%1$s UTC] %2$s: %3$s"
+
+#: admin/class-diagnostics-page.php:308
+msgid "== Data size =="
+msgstr "== Rozmiar danych =="
+
+#. translators: 1: table label (already translated), 2: row count
+#: admin/class-diagnostics-page.php:312
+#, php-format
+msgid "%1$s: %2$d"
+msgstr "%1$s: %2$d"
+
+#: admin/class-diagnostics-page.php:336
+msgid "Recorded value history"
+msgstr "Zarejestrowana historia wartości"
+
+#: admin/class-diagnostics-page.php:339
+msgid "Widget usage tracking"
+msgstr "Śledzenie użycia widżetów"
+
+#: admin/class-diagnostics-page.php:342
+#: admin/views/diagnostics.php:236
+#: includes/premium/admin-views/alert-rules-page.php:36
+msgid "Alert rules"
+msgstr "Reguły alertów"
+
+#: admin/class-diagnostics-page.php:346
+msgid "MQTT cache"
+msgstr "Cache MQTT"
+
+#: admin/class-diagnostics-page.php:349
+msgid "Error log"
+msgstr "Log błędów"
+
+#: admin/class-diagnostics-page.php:497
+msgid "Record value history"
+msgstr "Rejestrowanie historii wartości"
+
+#: admin/class-diagnostics-page.php:498
+msgid "Clean up old history & error log"
+msgstr "Czyszczenie starej historii i logu błędów"
+
+#: admin/class-diagnostics-page.php:499
+msgid "Poll MQTT brokers"
+msgstr "Odpytywanie brokerów MQTT"
+
+#: admin/class-diagnostics-page.php:500
+msgid "Send due email reports"
+msgstr "Wysyłka należnych raportów e-mail"
+
+#: admin/class-email-reports-page.php:77
+#: includes/premium/admin-views/email-reports-page.php:19
+msgid "IoT Data Widget — Email reports"
+msgstr "IoT Data Widget — raporty e-mail"
+
+#: admin/class-email-reports-page.php:78
+msgid "Email reports"
+msgstr "Raporty e-mail"
+
+#: admin/class-email-reports-page.php:215
+msgid "Please choose a valid frequency."
+msgstr "Wybierz poprawną częstotliwość."
+
+#: admin/class-email-reports-page.php:219
+msgid "A valid email address is required."
+msgstr "Wymagany jest poprawny adres e-mail."
+
+#: admin/class-settings-page.php:101
+#: admin/views/general-settings-page.php:27
+msgid "IoT Data Widget — Settings"
+msgstr "IoT Data Widget — ustawienia"
+
+#: admin/class-settings-page.php:102
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: admin/class-settings-page.php:295
+msgid "No file was uploaded, or the upload failed."
+msgstr "Nie przesłano pliku albo przesyłanie się nie powiodło."
+
+#: admin/class-settings-page.php:299
+msgid "The uploaded file is too large to be a valid export."
+msgstr "Przesłany plik jest zbyt duży jak na poprawny eksport."
+
+#: admin/class-settings-page.php:305
+msgid "Invalid upload."
+msgstr "Nieprawidłowy przesłany plik."
+
+#: admin/class-settings-page.php:311
+msgid "Could not read the uploaded file."
+msgstr "Nie udało się odczytać przesłanego pliku."
+
+#: admin/class-settings-page.php:431
+msgid "Please choose a valid widget style."
+msgstr "Wybierz poprawny styl widżetu."
+
+#: admin/class-setup-wizard.php:239
+#: admin/views/wizard/step-0-location.php:20
+#: admin/views/wizard/step-1-connection-type.php:22
+#: admin/views/wizard/step-2-configure.php:40
+#: admin/views/wizard/step-3-entity.php:44
+#: admin/views/wizard/step-4-preview.php:29
+#: admin/views/wizard/step-5-done.php:21
+#: admin/views/wizard/step-push-1-platform.php:18
+#: admin/views/wizard/step-push-2-channel.php:27
+#: admin/views/wizard/step-push-3-snippet.php:25
+msgid "IoT Data Widget — Setup"
+msgstr "IoT Data Widget — konfiguracja"
+
+#: admin/class-setup-wizard.php:240
+msgid "Setup Wizard"
+msgstr "Kreator konfiguracji"
+
+#: admin/class-setup-wizard.php:303
+msgid "Listening for data…"
+msgstr "Nasłuchiwanie danych…"
+
+#: admin/class-setup-wizard.php:304
+#: admin/views/wizard/step-push-3-snippet.php:129
+msgid "— no data yet —"
+msgstr "— brak jeszcze danych —"
+
+#: admin/class-setup-wizard.php:305
+#: includes/class-rest-api.php:242
+msgid "Could not reach the server. Check your internet connection and try again."
+msgstr "Nie udało się połączyć z serwerem. Sprawdź połączenie internetowe i spróbuj ponownie."
+
+#: admin/class-setup-wizard.php:306
+msgid "Nothing received yet after 60 seconds — double-check the snippet was pasted correctly and the device is online, then try again."
+msgstr "Po 60 sekundach nadal nie odebrano danych. Sprawdź, czy fragment kodu został poprawnie wklejony i czy urządzenie jest online. Potem spróbuj ponownie."
+
+#. translators: %1$s is the entity name and %2$s the received value, both replaced client-side (JS) — keep the literal "%1$s"/"%2$s".
+#: admin/class-setup-wizard.php:308
+#, php-format
+msgid "✓ Received \"%1$s\" = %2$s"
+msgstr "✓ Odebrano „%1$s” = %2$s"
+
+#: admin/class-setup-wizard.php:352
+msgid "Try it with demo data (no setup)"
+msgstr "Wypróbuj z danymi demo (bez konfiguracji)"
+
+#: admin/class-setup-wizard.php:356
+msgid "Demo weather data"
+msgstr "Przykładowe dane pogodowe"
+
+#: admin/class-setup-wizard.php:363
+#: admin/class-setup-wizard.php:366
+#: admin/class-setup-wizard.php:659
+#: includes/class-connector-manager.php:57
+#: includes/class-push-snippet-generator.php:436
+msgid "Home Assistant"
+msgstr "Home Assistant"
+
+#: admin/class-setup-wizard.php:373
+msgid "Local device"
+msgstr "Urządzenie lokalne"
+
+#: admin/class-setup-wizard.php:376
+#: includes/premium/class-connector-presets.php:35
+msgid "Shelly (Gen1)"
+msgstr "Shelly (Gen1)"
+
+#: admin/class-setup-wizard.php:381
+#: admin/class-setup-wizard.php:656
+#: includes/class-push-snippet-generator.php:287
+#: includes/premium/class-connector-presets.php:66
+msgid "Shelly (Gen2+)"
+msgstr "Shelly (Gen2+)"
+
+#: admin/class-setup-wizard.php:386
+#: admin/class-setup-wizard.php:657
+#: includes/class-push-snippet-generator.php:323
+#: includes/premium/class-connector-presets.php:135
+msgid "Tasmota"
+msgstr "Tasmota"
+
+#: admin/class-setup-wizard.php:391
+#: includes/premium/class-connector-presets.php:280
+msgid "ESPHome (web_server)"
+msgstr "ESPHome (web_server)"
+
+#: admin/class-setup-wizard.php:398
+msgid "Cloud"
+msgstr "Chmura"
+
+#: admin/class-setup-wizard.php:401
+#: includes/class-connector-manager.php:69
+msgid "Shelly Cloud"
+msgstr "Shelly Cloud"
+
+#: admin/class-setup-wizard.php:412
+msgid "Supla"
+msgstr "Supla"
+
+#: admin/class-setup-wizard.php:419
+msgid "MQTT"
+msgstr "MQTT"
+
+#: admin/class-setup-wizard.php:422
+msgid "MQTT (polling via WP-Cron)"
+msgstr "MQTT (odpytywanie przez WP-Cron)"
+
+#: admin/class-setup-wizard.php:427
+#: includes/class-connector-manager.php:74
+msgid "MQTT (listener — requires server access)"
+msgstr "MQTT (nasłuch — wymaga dostępu do serwera)"
+
+#: admin/class-setup-wizard.php:434
+msgid "Advanced"
+msgstr "Zaawansowane"
+
+#: admin/class-setup-wizard.php:437
+msgid "Generic REST (advanced/JSONPath)"
+msgstr "Generic REST (zaawansowany/JSONPath)"
+
+#: admin/class-setup-wizard.php:658
+#: includes/class-push-snippet-generator.php:376
+msgid "ESPHome"
+msgstr "ESPHome"
+
+#: admin/class-setup-wizard.php:754
+#: admin/class-setup-wizard.php:851
+#: admin/class-setup-wizard.php:964
+#: admin/class-setup-wizard.php:1161
+msgid "You are not allowed to do this."
+msgstr "Nie masz uprawnień, żeby to zrobić."
+
+#: admin/class-setup-wizard.php:767
+msgid "Please enter a name for this channel."
+msgstr "Podaj nazwę kanału."
+
+#: admin/class-setup-wizard.php:771
+msgid "Please list at least one entity name."
+msgstr "Podaj przynajmniej jedną nazwę encji."
+
+#. translators: %s: the invalid entity name as typed
+#: admin/class-setup-wizard.php:778
+#, php-format
+msgid "\"%s\" is not a valid entity name — use only lowercase letters, numbers, and _ . : -"
+msgstr "Nazwa encji „%s” jest nieprawidłowa. Używaj wyłącznie małych liter, cyfr oraz znaków _ . : -"
+
+#: admin/class-setup-wizard.php:861
+msgid "Unknown push channel."
+msgstr "Nieznany kanał push."
+
+#: admin/class-setup-wizard.php:1132
+msgid "MQTT topic"
+msgstr "Topic MQTT"
+
+#: admin/class-setup-wizard.php:1136
+msgid "Path in the Shelly Cloud response"
+msgstr "Ścieżka w odpowiedzi Shelly Cloud"
+
+#: admin/class-setup-wizard.php:1142
+msgid "Entity path"
+msgstr "Ścieżka encji"
+
+#: admin/class-setup-wizard.php:1145
+msgid "Path in the API response (JSONPath)"
+msgstr "Ścieżka w odpowiedzi API (JSONPath)"
+
+#: admin/class-setup-wizard.php:1252
+msgid "Outdoor temperature"
+msgstr "Temperatura na zewnątrz"
+
+#: admin/class-style-settings-page.php:56
+#: admin/views/style-settings-page.php:16
+msgid "IoT Data Widget — Appearance"
+msgstr "IoT Data Widget — wygląd"
+
+#: admin/class-style-settings-page.php:57
+#: blocks/iot-widget/src/edit.js:726
+msgid "Appearance"
+msgstr "Wygląd"
+
+#. translators: %s: computed contrast ratio, e.g. "3.20" — substituted client-side in style-settings-preview.js, not by PHP.
+#. translators: %s: computed contrast ratio, e.g. "3.20"
+#: admin/class-style-settings-page.php:114
+#: blocks/iot-widget/src/edit.js:776
+#, php-format,js-format
+msgid "Low contrast: text vs. background is %s:1 — WCAG AA recommends at least 4.5:1 for readable text."
+msgstr "Kontrast jest niski: tekst na tle ma %s:1. WCAG AA zaleca co najmniej 4,5:1 dla czytelnego tekstu."
+
+#. translators: %s: computed contrast ratio, e.g. "2.10" — substituted client-side in style-settings-preview.js, not by PHP.
+#. translators: %s: computed contrast ratio, e.g. "2.10"
+#: admin/class-style-settings-page.php:116
+#: blocks/iot-widget/src/edit.js:786
+#, php-format,js-format
+msgid "Low contrast: accent vs. background is %s:1 — WCAG AA recommends at least 3:1 for the gauge/sparkline to stay visible."
+msgstr "Kontrast jest niski: kolor akcentu na tle ma %s:1. WCAG AA zaleca co najmniej 3:1, żeby wskaźnik i mini trend były dobrze widoczne."
+
+#: admin/class-style-settings-page.php:146
+msgid "Living room temperature"
+msgstr "Temperatura w salonie"
+
+#: admin/views/connector-form.php:18
+#: admin/views/general-settings-page.php:281
+#: admin/views/wizard/step-push-2-channel.php:35
+#: includes/premium/admin-views/alert-rule-form.php:20
+#: includes/premium/admin-views/email-report-form.php:20
+msgid "Please fix the following before saving:"
+msgstr "Popraw poniższe błędy przed zapisaniem:"
+
+#: admin/views/connector-form.php:32
+#: includes/premium/admin-views/alert-rule-form.php:135
+#: includes/premium/admin-views/email-report-form.php:113
+msgid "Save changes"
+msgstr "Zapisz zmiany"
+
+#: admin/views/connector-form.php:32
+#: admin/views/settings-page.php:141
+msgid "Add connection"
+msgstr "Dodaj połączenie"
+
+#: admin/views/diagnostics.php:26
+msgid "A snapshot of this site's environment and IoT Data Widget's own scheduled tasks — useful when reporting an issue."
+msgstr "Migawka środowiska tej witryny i zaplanowanych zadań IoT Data Widget. Przydaje się przy zgłaszaniu problemu."
+
+#: admin/views/diagnostics.php:31
+msgid "Copy diagnostic report"
+msgstr "Kopiuj raport diagnostyczny"
+
+#: admin/views/diagnostics.php:36
+msgid "Copies everything on this page as plain text, ready to paste into a support email. Tokens, keys and passwords are stripped before anything is recorded — the report never includes them."
+msgstr "Kopiuje całą zawartość tej strony jako zwykły tekst, który można wkleić do e-maila do pomocy technicznej. Tokeny, klucze i hasła są usuwane przed zapisem, więc raport nigdy ich nie zawiera."
+
+#: admin/views/diagnostics.php:41
+msgid "Environment"
+msgstr "Środowisko"
+
+#: admin/views/diagnostics.php:45
+msgid "PHP version"
+msgstr "Wersja PHP"
+
+#: admin/views/diagnostics.php:49
+msgid "WordPress version"
+msgstr "Wersja WordPress"
+
+#: admin/views/diagnostics.php:53
+msgid "Active theme"
+msgstr "Aktywny motyw"
+
+#: admin/views/diagnostics.php:57
+msgid "Memory limit"
+msgstr "Limit pamięci"
+
+#: admin/views/diagnostics.php:61
+msgid "Max execution time"
+msgstr "Maksymalny czas wykonania"
+
+#. translators: %s: max_execution_time PHP setting, in seconds
+#: admin/views/diagnostics.php:66
+#, php-format
+msgid "%ss"
+msgstr "%ss"
+
+#: admin/views/diagnostics.php:73
+msgid "Other active plugins"
+msgstr "Pozostałe aktywne wtyczki"
+
+#: admin/views/diagnostics.php:89
+msgid "Scheduled tasks"
+msgstr "Zaplanowane zadania"
+
+#: admin/views/diagnostics.php:92
+msgid "Task"
+msgstr "Zadanie"
+
+#: admin/views/diagnostics.php:93
+#: admin/views/diagnostics.php:154
+#: admin/views/diagnostics.php:242
+#: includes/premium/admin-views/alert-rules-page.php:44
+msgid "Status"
+msgstr "Status"
+
+#: admin/views/diagnostics.php:94
+msgid "Next run"
+msgstr "Kolejne uruchomienie"
+
+#: admin/views/diagnostics.php:95
+msgid "Last run"
+msgstr "Ostatnie uruchomienie"
+
+#: admin/views/diagnostics.php:108
+msgid "Scheduled, last run failed"
+msgstr "Zaplanowane, ostatnie uruchomienie nieudane"
+
+#. translators: %s: next scheduled run date/time, in UTC
+#. translators: %s: last run date/time, in UTC
+#. translators: %s: last received date/time, in UTC
+#. translators: %s: last checked date/time, in UTC
+#. translators: %s: last triggered date/time, in UTC
+#. translators: %s: date/time the error occurred, in UTC
+#: admin/views/diagnostics.php:114
+#: admin/views/diagnostics.php:125
+#: admin/views/diagnostics.php:171
+#: admin/views/diagnostics.php:202
+#: admin/views/diagnostics.php:258
+#: admin/views/diagnostics.php:292
+#, php-format
+msgid "%s UTC"
+msgstr "%s UTC"
+
+#: admin/views/diagnostics.php:143
+msgid "No scheduled tasks found."
+msgstr "Nie znaleziono zaplanowanych zadań."
+
+#: admin/views/diagnostics.php:151
+#: admin/views/diagnostics.php:239
+#: admin/views/general-settings-page.php:186
+#: admin/views/general-settings-page.php:244
+#: admin/views/general-settings-page.php:294
+#: includes/premium/admin-views/alert-rule-form.php:33
+#: includes/premium/admin-views/alert-rules-page.php:40
+#: includes/premium/admin-views/email-report-form.php:33
+#: includes/premium/admin-views/email-reports-page.php:40
+#: blocks/iot-widget/src/edit.js:550
+#: blocks/iot-widget/src/grid-item-editor.js:57
+msgid "Connection"
+msgstr "Połączenie"
+
+#: admin/views/diagnostics.php:152
+#: admin/views/settings-page.php:69
+msgid "Type"
+msgstr "Typ"
+
+#: admin/views/diagnostics.php:153
+msgid "Last checked"
+msgstr "Ostatnio sprawdzono"
+
+#: admin/views/diagnostics.php:155
+msgid "Consecutive errors"
+msgstr "Błędy z rzędu"
+
+#: admin/views/diagnostics.php:156
+msgid "Last error"
+msgstr "Ostatni błąd"
+
+#: admin/views/diagnostics.php:177
+msgid "No data received yet"
+msgstr "Nie odebrano jeszcze danych"
+
+#: admin/views/diagnostics.php:179
+msgid "Active"
+msgstr "Aktywna"
+
+#: admin/views/diagnostics.php:181
+msgid "Inactive"
+msgstr "Nieaktywna"
+
+#: admin/views/diagnostics.php:230
+#: admin/views/settings-page.php:130
+msgid "No connections configured yet."
+msgstr "Nie skonfigurowano jeszcze żadnych połączeń."
+
+#: admin/views/diagnostics.php:240
+#: admin/views/general-settings-page.php:199
+#: admin/views/general-settings-page.php:210
+#: admin/views/general-settings-page.php:245
+#: admin/views/general-settings-page.php:310
+#: admin/views/general-settings-page.php:321
+#: admin/views/wizard/step-5-done.php:34
+#: admin/views/wizard/step-push-3-snippet.php:117
+#: includes/premium/admin-views/alert-rule-form.php:53
+#: includes/premium/admin-views/alert-rule-form.php:64
+#: includes/premium/admin-views/alert-rules-page.php:41
+#: includes/premium/admin-views/email-report-form.php:53
+#: includes/premium/admin-views/email-report-form.php:64
+#: includes/premium/admin-views/email-reports-page.php:41
+#: blocks/iot-widget/src/edit.js:587
+#: blocks/iot-widget/src/edit.js:605
+#: blocks/iot-widget/src/grid-item-editor.js:87
+#: blocks/iot-widget/src/grid-item-editor.js:101
+msgid "Entity"
+msgid_plural "Entities"
+msgstr[0] "Encja"
+msgstr[1] "Encje"
+msgstr[2] "Encji"
+
+#: admin/views/diagnostics.php:241
+#: includes/premium/admin-views/alert-rule-form.php:81
+#: includes/premium/admin-views/alert-rules-page.php:42
+msgid "Condition"
+msgstr "Warunek"
+
+#: admin/views/diagnostics.php:243
+msgid "Last triggered"
+msgstr "Ostatnio wyzwolony"
+
+#: admin/views/diagnostics.php:272
+#: includes/premium/admin-views/alert-rules-page.php:81
+msgid "No alert rules configured yet."
+msgstr "Nie skonfigurowano jeszcze żadnych reguł alertów."
+
+#: admin/views/diagnostics.php:278
+msgid "Recent errors"
+msgstr "Ostatnie błędy"
+
+#: admin/views/diagnostics.php:281
+msgid "When"
+msgstr "Kiedy"
+
+#: admin/views/diagnostics.php:282
+msgid "Source"
+msgstr "Źródło"
+
+#: admin/views/diagnostics.php:283
+msgid "Message"
+msgstr "Komunikat"
+
+#: admin/views/diagnostics.php:302
+msgid "No errors recorded — everything is working."
+msgstr "Nie zarejestrowano żadnych błędów. Wszystko działa."
+
+#: admin/views/diagnostics.php:307
+msgid "Data size"
+msgstr "Rozmiar danych"
+
+#: admin/views/diagnostics.php:313
+msgid "Table"
+msgstr "Tabela"
+
+#: admin/views/diagnostics.php:314
+msgid "Rows"
+msgstr "Wiersze"
+
+#: admin/views/general-settings-page.php:31
+msgid "Settings saved."
+msgstr "Ustawienia zapisane."
+
+#: admin/views/general-settings-page.php:32
+msgid "Manually tracked entity added."
+msgstr "Ręcznie śledzona encja została dodana."
+
+#: admin/views/general-settings-page.php:33
+msgid "Manually tracked entity removed."
+msgstr "Ręcznie śledzona encja została usunięta."
+
+#. translators: %d: number of imported connections
+#: admin/views/general-settings-page.php:52
+#, php-format
+msgid "Imported %d connection."
+msgid_plural "Imported %d connections."
+msgstr[0] "Zaimportowano %d połączenie."
+msgstr[1] "Zaimportowano %d połączenia."
+msgstr[2] "Zaimportowano %d połączeń."
+
+#. translators: %d: number of skipped entries
+#: admin/views/general-settings-page.php:63
+#, php-format
+msgid "Skipped %d entry:"
+msgid_plural "Skipped %d entries:"
+msgstr[0] "Pominięto %d wpis:"
+msgstr[1] "Pominięto %d wpisy:"
+msgstr[2] "Pominięto %d wpisów:"
+
+#: admin/views/general-settings-page.php:76
+msgid "Imported connections need their password/authorization re-entered before use — these are never included in an export, by design."
+msgstr "Przed użyciem zaimportowanych połączeń wpisz ponownie hasło lub dane autoryzacji. Eksport celowo ich nie zawiera."
+
+#: admin/views/general-settings-page.php:81
+msgid "Import failed:"
+msgstr "Import nieudany:"
+
+#: admin/views/general-settings-page.php:88
+msgid "Branding"
+msgstr "Branding"
+
+#: admin/views/general-settings-page.php:94
+msgid "Front-end attribution"
+msgstr "Oznaczenie na froncie witryny"
+
+#: admin/views/general-settings-page.php:98
+msgid "Show \"Powered by IoT Data Widget\" beneath widgets"
+msgstr "Pokaż „Powered by IoT Data Widget” pod widżetami"
+
+#: admin/views/general-settings-page.php:101
+msgid "Off by default. Turn this on if you'd like to credit the plugin beneath your widgets."
+msgstr "Opcja jest domyślnie wyłączona. Włącz ją, jeśli chcesz pokazać pod widżetami informację o wtyczce."
+
+#: admin/views/general-settings-page.php:106
+msgid "Stale data threshold"
+msgstr "Próg przeterminowania danych"
+
+#: admin/views/general-settings-page.php:116
+msgid "minutes"
+msgstr "minut"
+
+#: admin/views/general-settings-page.php:118
+msgid "Past this age, widgets show the value grayed out with a timestamp instead of implying it's current — mainly relevant for push channels, where a device can stop sending data without any explicit connection error."
+msgstr "Po przekroczeniu tego czasu widżety pokazują wartość wyszarzoną razem z czasem odczytu, zamiast sugerować, że jest aktualna. Dotyczy to głównie kanałów push: urządzenie może przestać wysyłać dane, a połączenie nie zgłosi żadnego błędu."
+
+#: admin/views/general-settings-page.php:123
+msgid "Local network"
+msgstr "Sieć lokalna"
+
+#: admin/views/general-settings-page.php:127
+msgid "Allow local network addresses"
+msgstr "Zezwalaj na adresy sieci lokalnej"
+
+#: admin/views/general-settings-page.php:130
+msgid "Turn this on only if WordPress runs on the same network as your devices (e.g. a home server) and connects to addresses like 192.168.x.x or homeassistant.local. Off by default: it stops a misconfigured or malicious URL from reaching other services on your server's network. Cloud metadata and link-local addresses are always blocked."
+msgstr "Włącz tę opcję tylko wtedy, gdy WordPress działa w tej samej sieci co urządzenia (na przykład na domowym serwerze) i łączy się z adresami takimi jak 192.168.x.x albo homeassistant.local. Opcja jest domyślnie wyłączona. Dzięki temu błędnie skonfigurowany lub złośliwy adres nie dotrze do innych usług w sieci serwera. Adresy usług metadanych w chmurze i adresy link-local są zawsze blokowane."
+
+#: admin/views/general-settings-page.php:133
+msgid "On a multisite network, only a network administrator can change this."
+msgstr "W sieci multisite to ustawienie może zmienić tylko administrator sieci."
+
+#: admin/views/general-settings-page.php:138
+msgid "Uninstall"
+msgstr "Odinstalowanie"
+
+#: admin/views/general-settings-page.php:142
+msgid "Remove all plugin data when the plugin is deleted"
+msgstr "Usuń wszystkie dane wtyczki przy jej usunięciu"
+
+#: admin/views/general-settings-page.php:145
+msgid "Off by default. Deactivating the plugin (e.g. during an update) never touches your data either way — only checking this box AND THEN deleting the plugin from the Plugins screen removes connections, history, alerts and every other setting. Leave this unchecked if you might reinstall later."
+msgstr "Opcja jest domyślnie wyłączona. Wyłączenie wtyczki (np. podczas aktualizacji) nigdy nie usuwa danych, niezależnie od tego ustawienia. Połączenia, historia, alerty i wszystkie pozostałe ustawienia zostaną usunięte dopiero wtedy, gdy zaznaczysz to pole, a NASTĘPNIE usuniesz wtyczkę na ekranie Wtyczki. Zostaw pole niezaznaczone, jeśli możesz kiedyś zainstalować wtyczkę ponownie."
+
+#: admin/views/general-settings-page.php:150
+msgid "Save settings"
+msgstr "Zapisz ustawienia"
+
+#: admin/views/general-settings-page.php:153
+msgid "Export connections"
+msgstr "Eksport połączeń"
+
+#: admin/views/general-settings-page.php:154
+msgid "Downloads a JSON file with all your connections. Passwords and authorization tokens are never included — re-enter them after importing."
+msgstr "Pobiera plik JSON ze wszystkimi połączeniami. Plik nigdy nie zawiera haseł ani tokenów autoryzacyjnych. Po imporcie wpisz je ponownie."
+
+#: admin/views/general-settings-page.php:158
+msgid "Download export"
+msgstr "Pobierz eksport"
+
+#: admin/views/general-settings-page.php:161
+msgid "Import connections"
+msgstr "Import połączeń"
+
+#: admin/views/general-settings-page.php:162
+msgid "Imports connections from a previously exported JSON file. Connections with a matching ID are overwritten; others are added. Existing connections not present in the file are left untouched."
+msgstr "Importuje połączenia z wcześniej wyeksportowanego pliku JSON. Połączenia o tym samym identyfikatorze zostaną nadpisane, a pozostałe — dodane. Istniejące połączenia, których nie ma w pliku, pozostaną bez zmian."
+
+#: admin/views/general-settings-page.php:167
+msgid "Import"
+msgstr "Importuj"
+
+#: admin/views/general-settings-page.php:170
+msgid "Export history data"
+msgstr "Eksport danych historii"
+
+#: admin/views/general-settings-page.php:173
+#: includes/premium/class-history-csv-export.php:71
+msgid "CSV export of recorded history requires the Pro version."
+msgstr "Eksport CSV zarejestrowanej historii wymaga wersji Pro."
+
+#: admin/views/general-settings-page.php:177
+msgid "Downloads the raw recorded history for one connection/entity as a CSV file, for further analysis outside the plugin. Only entities used by a Chart/Sparkline widget (or manually tracked below) have history recorded."
+msgstr "Pobiera surową historię wybranej encji jako plik CSV do dalszej analizy poza wtyczką. Historia jest rejestrowana tylko dla encji użytych w widżecie Wykres lub Mini trend albo śledzonych ręcznie (poniżej)."
+
+#: admin/views/general-settings-page.php:189
+#: admin/views/general-settings-page.php:297
+#: includes/premium/admin-views/alert-rule-form.php:40
+#: includes/premium/admin-views/email-report-form.php:40
+#: blocks/iot-widget/src/edit.js:454
+msgid "— select connection —"
+msgstr "— wybierz połączenie —"
+
+#: admin/views/general-settings-page.php:204
+#: admin/views/general-settings-page.php:315
+#: includes/premium/admin-views/alert-rule-form.php:58
+#: includes/premium/admin-views/email-report-form.php:58
+#: blocks/iot-widget/src/edit.js:599
+#: blocks/iot-widget/src/grid-item-editor.js:94
+msgid "Enter manually instead"
+msgstr "Wpisz ręcznie zamiast tego"
+
+#: admin/views/general-settings-page.php:214
+msgid "Useful if the entity was renamed/removed from the live connection since history was recorded."
+msgstr "Przydaje się, jeśli po zarejestrowaniu historii encja została przemianowana lub usunięta z połączenia."
+
+#: admin/views/general-settings-page.php:218
+#: admin/views/general-settings-page.php:332
+#: includes/premium/admin-views/alert-rule-form.php:75
+#: includes/premium/admin-views/email-report-form.php:75
+#: blocks/iot-widget/src/edit.js:632
+#: blocks/iot-widget/src/grid-item-editor.js:107
+msgid "Choose from list instead"
+msgstr "Wybierz z listy zamiast tego"
+
+#: admin/views/general-settings-page.php:224
+msgid "From"
+msgstr "Od"
+
+#: admin/views/general-settings-page.php:228
+msgid "To"
+msgstr "Do"
+
+#: admin/views/general-settings-page.php:233
+msgid "Download CSV"
+msgstr "Pobierz plik CSV"
+
+#: admin/views/general-settings-page.php:237
+msgid "Manually tracked entities"
+msgstr "Ręcznie śledzone encje"
+
+#: admin/views/general-settings-page.php:239
+msgid "Widgets placed in post/page content are detected automatically. If you output a widget from a theme template instead (e.g. in a widget area or a custom page template), add it here so it still gets polled for history/alerts even though there's no post content to scan."
+msgstr "Widżety umieszczone w treści wpisu lub strony są wykrywane automatycznie. Jeśli wyświetlasz widżet z szablonu motywu (np. w obszarze widżetów albo we własnym szablonie strony), dodaj go tutaj. Dzięki temu wtyczka nadal będzie pobierać jego dane do historii i alertów, chociaż nie ma treści wpisu do przeskanowania."
+
+#: admin/views/general-settings-page.php:246
+#: blocks/iot-widget/src/edit.js:499
+msgid "Style"
+msgstr "Styl"
+
+#: admin/views/general-settings-page.php:258
+msgid "Stop tracking this entity?"
+msgstr "Przestać śledzić tę encję?"
+
+#: admin/views/general-settings-page.php:259
+#: blocks/iot-widget/src/grid-item-editor.js:117
+msgid "Remove"
+msgstr "Usuń"
+
+#: admin/views/general-settings-page.php:272
+msgid "No manually tracked entities yet."
+msgstr "Nie ma jeszcze ręcznie śledzonych encji."
+
+#: admin/views/general-settings-page.php:273
+msgid "Track your first entity"
+msgstr "Zacznij śledzić pierwszą encję"
+
+#: admin/views/general-settings-page.php:305
+#: includes/premium/admin-views/alert-rule-form.php:48
+#: includes/premium/admin-views/email-report-form.php:48
+msgid "No connections configured yet. Add one under IoT Data Widget → Connections first."
+msgstr "Nie skonfigurowano jeszcze żadnych połączeń. Najpierw dodaj połączenie w menu IoT Data Widget → Połączenia."
+
+#: admin/views/general-settings-page.php:338
+msgid "Widget style"
+msgstr "Styl widżetu"
+
+#: admin/views/general-settings-page.php:341
+#: blocks/iot-widget/src/edit.js:96
+msgid "Card"
+msgstr "Karta"
+
+#: admin/views/general-settings-page.php:342
+#: blocks/iot-widget/src/edit.js:97
+msgid "Status list"
+msgstr "Lista statusów"
+
+#: admin/views/general-settings-page.php:343
+#: blocks/iot-widget/src/edit.js:98
+msgid "Gauge"
+msgstr "Wskaźnik"
+
+#: admin/views/general-settings-page.php:344
+#: blocks/iot-widget/src/edit.js:99
+msgid "Chart"
+msgstr "Wykres"
+
+#: admin/views/general-settings-page.php:345
+#: blocks/iot-widget/src/edit.js:100
+msgid "Mini trend (sparkline)"
+msgstr "Mini trend (sparkline)"
+
+#: admin/views/general-settings-page.php:348
+msgid "Must match the style actually rendered by your theme template — Chart/Sparkline are what determine whether this entity gets recorded into history."
+msgstr "Styl musi być taki sam jak styl widżetu w szablonie motywu. To od stylu Wykres lub Mini trend zależy, czy encja jest zapisywana w historii."
+
+#: admin/views/general-settings-page.php:354
+msgid "Add manually tracked entity"
+msgstr "Dodaj ręcznie śledzoną encję"
+
+#: admin/views/partials/connector-fields.php:30
+#: admin/views/settings-page.php:68
+msgid "Name"
+msgstr "Nazwa"
+
+#: admin/views/partials/connector-fields.php:43
+msgid "Connector"
+msgstr "Konektor"
+
+#: admin/views/partials/connector-fields.php:73
+#: admin/views/settings-page.php:70
+msgid "URL"
+msgstr "Adres URL"
+
+#: admin/views/partials/connector-fields.php:85
+msgid "Home Assistant: your instance URL (without /api). Generic REST: full URL of the JSON endpoint."
+msgstr "Home Assistant: adres instancji (bez /api). Generic REST: pełny adres endpointu zwracającego JSON."
+
+#: admin/views/partials/connector-fields.php:88
+#: admin/views/partials/connector-fields.php:147
+#: includes/premium/admin-views/connector-fields-mqtt.php:121
+#: includes/premium/admin-views/connector-fields-shelly-cloud.php:58
+msgid "Leave empty to keep the current value."
+msgstr "Zostaw puste, aby zachować obecną wartość."
+
+#: admin/views/partials/connector-fields.php:108
+#: includes/class-rest-api.php:271
+msgid "Authorization"
+msgstr "Autoryzacja"
+
+#: admin/views/partials/connector-fields.php:118
+msgid "Home Assistant: Long-Lived Access Token. Generic REST: leave empty (no authorization) or a full header, e.g. \"Authorization: Bearer xxx\" or \"X-API-Key: xxx\"."
+msgstr "Home Assistant: Long-Lived Access Token. Generic REST: zostaw puste (bez autoryzacji) albo wpisz pełny nagłówek, np. „Authorization: Bearer xxx” lub „X-API-Key: xxx”."
+
+#. translators: %s: link to Home Assistant's user management docs
+#: admin/views/partials/connector-fields.php:141
+#, php-format
+msgid "This token inherits the full permissions of the account that created it — Home Assistant has no way to limit it to read-only. We recommend creating a separate, non-administrator account just for this token: %s"
+msgstr "Ten token ma pełne uprawnienia konta, na którym został utworzony. Home Assistant nie pozwala ograniczyć go tylko do odczytu. Zalecamy utworzenie osobnego konta bez uprawnień administratora, przeznaczonego wyłącznie dla tego tokenu: %s"
+
+#: admin/views/partials/connector-fields.php:142
+msgid "Home Assistant user management docs"
+msgstr "Dokumentacja zarządzania użytkownikami Home Assistant"
+
+#: admin/views/partials/connector-fields.php:152
+msgid "Entity/topic to test with"
+msgstr "Encja/topic do testu"
+
+#: admin/views/partials/connector-fields.php:184
+msgid "Used only for the test below — you'll pick the entity for each widget separately later."
+msgstr "Ta encja służy tylko do testu poniżej. Encję dla każdego widżetu wybierzesz później osobno."
+
+#: admin/views/partials/connector-fields.php:197
+msgid "Verifies the connection by fetching the full entity list from Home Assistant — no need to know an entity ID yet, you'll pick from the list in the next step."
+msgstr "Test sprawdza połączenie, pobierając pełną listę encji z Home Assistanta. Nie musisz jeszcze znać identyfikatora encji. Wybierzesz ją z listy w następnym kroku."
+
+#: admin/views/partials/connector-fields.php:201
+msgid "Test connection"
+msgstr "Testuj połączenie"
+
+#: admin/views/partials/delete-form.php:23
+msgid "Delete"
+msgstr "Usuń"
+
+#: admin/views/settings-page.php:25
+msgid "Run the setup wizard again"
+msgstr "Uruchom kreator konfiguracji ponownie"
+
+#: admin/views/settings-page.php:27
+msgid "add another connection through the same guided steps (test, pick an entity, get a ready-to-use shortcode)."
+msgstr "dodaj kolejne połączenie, przechodząc przez te same kroki (test, wybór encji, gotowy shortcode)."
+
+#: admin/views/settings-page.php:38
+msgid "The demo connection could not be saved. Please try again, or add a connection manually below."
+msgstr "Nie udało się zapisać połączenia demo. Spróbuj ponownie albo dodaj połączenie ręcznie poniżej."
+
+#: admin/views/settings-page.php:42
+msgid "Connection saved."
+msgstr "Połączenie zapisane."
+
+#: admin/views/settings-page.php:43
+msgid "Connection deleted."
+msgstr "Połączenie usunięte."
+
+#: admin/views/settings-page.php:53
+msgid "Now that you have a connection, try these next:"
+msgstr "Skoro masz już połączenie, wypróbuj teraz:"
+
+#: admin/views/settings-page.php:59
+msgid "Dismiss this notice."
+msgstr "Odrzuć tę wiadomość."
+
+#: admin/views/settings-page.php:64
+msgid "Saved connections"
+msgstr "Zapisane połączenia"
+
+#: admin/views/settings-page.php:71
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: admin/views/settings-page.php:110
+#: includes/premium/admin-views/alert-rules-page.php:60
+#: includes/premium/admin-views/email-reports-page.php:56
+msgid "Edit"
+msgstr "Edytuj"
+
+#: admin/views/settings-page.php:116
+msgid "Are you sure you want to delete this connection?"
+msgstr "Czy na pewno usunąć to połączenie?"
+
+#: admin/views/settings-page.php:131
+msgid "Add your first connection"
+msgstr "Dodaj pierwsze połączenie"
+
+#: admin/views/settings-page.php:140
+msgid "Edit connection"
+msgstr "Edytuj połączenie"
+
+#: admin/views/style-settings-page.php:24
+msgid "Appearance settings saved."
+msgstr "Ustawienia wyglądu zapisane."
+
+#: admin/views/style-settings-page.php:31
+msgid "These are the default colors, corner radius and font size used by every widget on your site. Individual widgets can still override them in the block editor."
+msgstr "To domyślne kolory, promień zaokrąglenia i rozmiar czcionki wszystkich widżetów w witrynie. Poszczególne widżety mogą je zmienić w edytorze bloków."
+
+#: admin/views/style-settings-page.php:40
+#: blocks/iot-widget/src/edit.js:740
+msgid "Background color"
+msgstr "Kolor tła"
+
+#: admin/views/style-settings-page.php:52
+#: blocks/iot-widget/src/edit.js:748
+msgid "Text color"
+msgstr "Kolor tekstu"
+
+#: admin/views/style-settings-page.php:64
+#: blocks/iot-widget/src/edit.js:756
+msgid "Accent color"
+msgstr "Kolor akcentu"
+
+#: admin/views/style-settings-page.php:73
+msgid "Used for the gauge fill and the sparkline line."
+msgstr "Używany do wypełnienia wskaźnika i linii mini trendu."
+
+#: admin/views/style-settings-page.php:83
+#: blocks/iot-widget/src/edit.js:799
+msgid "Corner radius"
+msgstr "Promień zaokrąglenia"
+
+#: admin/views/style-settings-page.php:96
+#: admin/views/style-settings-page.php:113
+msgid "px"
+msgstr "px"
+
+#: admin/views/style-settings-page.php:100
+#: blocks/iot-widget/src/edit.js:806
+msgid "Font size"
+msgstr "Rozmiar czcionki"
+
+#: admin/views/style-settings-page.php:117
+msgid "Save appearance settings"
+msgstr "Zapisz ustawienia wyglądu"
+
+#: admin/views/style-settings-page.php:121
+msgid "Live preview"
+msgstr "Podgląd na żywo"
+
+#: admin/views/wizard/step-0-location.php:21
+msgid "Where does your WordPress site run?"
+msgstr "Gdzie działa ta witryna WordPress?"
+
+#: admin/views/wizard/step-0-location.php:23
+msgid "This determines how your device and WordPress can reach each other — most setup problems and support requests come from getting this backwards."
+msgstr "Od tego zależy, jak urządzenie i WordPress mogą się ze sobą łączyć. Większość problemów z konfiguracją i zgłoszeń do pomocy technicznej wynika z pomylenia tych przypadków."
+
+#: admin/views/wizard/step-0-location.php:28
+msgid "On external/shared hosting (typical) — my device sends data to my site"
+msgstr "Hosting zewnętrzny/współdzielony (typowy przypadek) — moje urządzenie wysyła dane do mojej witryny"
+
+#: admin/views/wizard/step-0-location.php:32
+msgid "Same network as my devices (Raspberry Pi, NAS, home server) — my site fetches data from the device"
+msgstr "Ta sama sieć co moje urządzenia (Raspberry Pi, NAS, serwer domowy) — moja witryna pobiera dane z urządzenia"
+
+#: admin/views/wizard/step-0-location.php:51
+msgid "On external/shared hosting, but my device has its own cloud service (Shelly Cloud, Supla, a publicly-reachable Home Assistant) — my site fetches data from there"
+msgstr "Hosting zewnętrzny/współdzielony, ale moje urządzenie ma własną usługę w chmurze (Shelly Cloud, Supla, publicznie dostępny Home Assistant) — moja witryna pobiera dane stamtąd"
+
+#: admin/views/wizard/step-0-location.php:53
+msgid "On external/shared hosting, but my device has its own cloud service (a publicly-reachable Home Assistant; Shelly Cloud and Supla in Pro) — my site fetches data from there"
+msgstr "Na hostingu zewnętrznym/współdzielonym, ale moje urządzenie ma własną usługę w chmurze (publicznie dostępny Home Assistant; Shelly Cloud i Supla w wersji Pro) — moja witryna pobiera dane stamtąd"
+
+#: admin/views/wizard/step-0-location.php:60
+msgid "Not sure? Choose the first option — it's the safer default."
+msgstr "Nie masz pewności? Wybierz pierwszą opcję. To bezpieczniejszy wybór domyślny."
+
+#: admin/views/wizard/step-0-location.php:65
+msgid "Devices behind a home router (NAT) almost never accept incoming connections from the internet — if your WordPress is hosted externally, it typically cannot reach a device address like 192.168.x.x at all. Sending data out from the device instead always works, and so does fetching from a cloud service the device already reports to."
+msgstr "Urządzenia za domowym routerem (NAT) prawie nigdy nie przyjmują połączeń przychodzących z internetu. Jeśli WordPress działa na zewnętrznym hostingu, zwykle w ogóle nie połączy się z adresem urządzenia, takim jak 192.168.x.x. Wysyłanie danych z urządzenia działa zawsze. Działa też pobieranie danych z usługi w chmurze, do której urządzenie już je wysyła."
+
+#: admin/views/wizard/step-0-location.php:79
+msgid "Security note: in push mode, this plugin never stores any credentials to your devices — the device sends data out, authenticated by a token this plugin generates that only allows writing one entity to one channel. In pull mode, a copy of your device's own credentials (e.g. a Home Assistant access token) is stored in your WordPress database."
+msgstr "Uwaga o bezpieczeństwie: w trybie push wtyczka nigdy nie przechowuje danych logowania do urządzeń. To urządzenie wysyła dane, a uwierzytelnia je token wygenerowany przez wtyczkę. Ten token pozwala tylko zapisywać jedną encję w jednym kanale. W trybie pull baza danych WordPressa przechowuje kopię danych logowania urządzenia (np. token dostępu Home Assistanta)."
+
+#: admin/views/wizard/step-0-location.php:83
+#: admin/views/wizard/step-1-connection-type.php:92
+#: admin/views/wizard/step-2-configure.php:87
+#: admin/views/wizard/step-3-entity.php:152
+msgid "Skip the wizard, I'll configure manually"
+msgstr "Pomiń kreator, skonfiguruję ręcznie"
+
+#. translators: %s: nazwa wybranej grupy, np. "Local device"
+#: admin/views/wizard/step-1-connection-type.php:29
+#, php-format
+msgid "What kind of %s connection?"
+msgstr "Jaki rodzaj połączenia %s?"
+
+#: admin/views/wizard/step-1-connection-type.php:50
+#: admin/views/wizard/step-2-configure.php:85
+#: admin/views/wizard/step-3-entity.php:150
+#: admin/views/wizard/step-4-preview.php:89
+#: admin/views/wizard/step-push-1-platform.php:41
+#: admin/views/wizard/step-push-2-channel.php:80
+msgid "Back"
+msgstr "Wstecz"
+
+#: admin/views/wizard/step-1-connection-type.php:52
+msgid "What do you want to connect?"
+msgstr "Co chcesz połączyć?"
+
+#. translators: %s: nazwa wybranego typu połączenia, np. "Shelly (Gen1)"
+#: admin/views/wizard/step-2-configure.php:45
+#, php-format
+msgid "Configure %s"
+msgstr "Konfiguracja: %s"
+
+#: admin/views/wizard/step-2-configure.php:53
+msgid "Please fix the following before continuing:"
+msgstr "Popraw poniższe błędy przed kontynuowaniem:"
+
+#: admin/views/wizard/step-2-configure.php:70
+#: admin/views/wizard/step-3-entity.php:99
+#: admin/views/wizard/step-3-entity.php:144
+msgid "Continue"
+msgstr "Kontynuuj"
+
+#: admin/views/wizard/step-2-configure.php:80
+msgid "Test the connection first — the button unlocks automatically once the test passes (or, for MQTT, once it explains what happens next)."
+msgstr "Najpierw przetestuj połączenie. Przycisk odblokuje się automatycznie, gdy test się powiedzie (a w przypadku MQTT — gdy test wyjaśni, co będzie dalej)."
+
+#: admin/views/wizard/step-3-entity.php:45
+msgid "What do you want to display?"
+msgstr "Co chcesz wyświetlić?"
+
+#: admin/views/wizard/step-3-entity.php:48
+msgid "Connection saved. Now choose one or more entities for your first widgets."
+msgstr "Połączenie zostało zapisane. Teraz wybierz jedną lub więcej encji dla pierwszych widżetów."
+
+#: admin/views/wizard/step-3-entity.php:58
+msgid "Search"
+msgstr "Szukaj"
+
+#: admin/views/wizard/step-3-entity.php:63
+msgid "e.g. temperature"
+msgstr "np. temperatura"
+
+#: admin/views/wizard/step-3-entity.php:65
+msgid "Domain"
+msgstr "Domena"
+
+#: admin/views/wizard/step-3-entity.php:67
+#: blocks/iot-widget/src/edit.js:580
+#: blocks/iot-widget/src/grid-item-editor.js:80
+msgid "All domains"
+msgstr "Wszystkie domeny"
+
+#: admin/views/wizard/step-3-entity.php:72
+#: blocks/iot-widget/src/edit.js:568
+msgid "Entities"
+msgstr "Encje"
+
+#: admin/views/wizard/step-3-entity.php:80
+msgid "Loading entities…"
+msgstr "Wczytywanie encji…"
+
+#. translators: %d: number of selected entities
+#. translators: %d is replaced client-side (JS), not by sprintf — keep the literal "%d".
+#: admin/views/wizard/step-3-entity.php:88
+#: includes/class-rest-api.php:246
+#, php-format
+msgid "%d selected"
+msgstr "Zaznaczono: %d"
+
+#: admin/views/wizard/step-3-entity.php:112
+msgid "Connection saved. Now choose the entity for your first widget."
+msgstr "Połączenie zostało zapisane. Teraz wybierz encję dla pierwszego widżetu."
+
+#: admin/views/wizard/step-3-entity.php:122
+msgid "Metric"
+msgstr "Metryka"
+
+#: admin/views/wizard/step-4-preview.php:32
+msgid "Here they are!"
+msgstr "Oto one!"
+
+#: admin/views/wizard/step-4-preview.php:32
+msgid "Here it is!"
+msgstr "Oto ono!"
+
+#: admin/views/wizard/step-4-preview.php:47
+msgid "This is example weather data from Open-Meteo (open-meteo.com), a public weather API — configure your own device to see real data."
+msgstr "To przykładowe dane pogodowe z publicznego API pogodowego Open-Meteo (open-meteo.com). Skonfiguruj własne urządzenie, żeby zobaczyć prawdziwe dane."
+
+#: admin/views/wizard/step-4-preview.php:63
+msgid "Copy"
+msgstr "Kopiuj"
+
+#: admin/views/wizard/step-4-preview.php:73
+msgid "Copy all"
+msgstr "Kopiuj wszystko"
+
+#: admin/views/wizard/step-4-preview.php:80
+msgid "Paste this shortcode into any post or page (classic editor, Shortcode block, or most page builders) to show this widget there."
+msgstr "Wklej ten shortcode do dowolnego wpisu lub strony (w edytorze klasycznym, w bloku Shortcode albo w większości kreatorów stron). Widżet pojawi się w tym miejscu."
+
+#: admin/views/wizard/step-4-preview.php:85
+msgid "Finish"
+msgstr "Zakończ"
+
+#: admin/views/wizard/step-4-preview.php:91
+#: admin/views/wizard/step-5-done.php:41
+#: admin/views/wizard/step-push-3-snippet.php:146
+msgid "Go to Connections"
+msgstr "Przejdź do Połączeń"
+
+#: admin/views/wizard/step-5-done.php:22
+msgid "Done! You're all set."
+msgstr "Gotowe! Konfiguracja została zakończona."
+
+#: admin/views/wizard/step-5-done.php:26
+msgid "Connection type"
+msgstr "Typ połączenia"
+
+#: admin/views/wizard/step-5-done.php:30
+msgid "Connection name"
+msgstr "Nazwa połączenia"
+
+#: admin/views/wizard/step-5-done.php:45
+msgid "Try these next"
+msgstr "Wypróbuj teraz"
+
+#: admin/views/wizard/step-push-1-platform.php:19
+msgid "Which platform is your device?"
+msgstr "Na jakiej platformie działa urządzenie?"
+
+#: admin/views/wizard/step-push-1-platform.php:21
+msgid "You'll get a ready-to-paste configuration snippet for whichever one you pick."
+msgstr "Niezależnie od wyboru otrzymasz gotowy do wklejenia fragment konfiguracji."
+
+#: admin/views/wizard/step-push-2-channel.php:28
+msgid "Create a push channel"
+msgstr "Utwórz kanał push"
+
+#: admin/views/wizard/step-push-2-channel.php:30
+msgid "List the names you'll use for each value your device sends (e.g. \"temperature\", \"power\", \"relay\") — only these exact names will be accepted later, everything else is rejected."
+msgstr "Podaj nazwy wszystkich wartości, które urządzenie będzie wysyłać (np. „temperature”, „power”, „relay”). Później wtyczka przyjmie tylko te nazwy, a wszystkie inne odrzuci."
+
+#: admin/views/wizard/step-push-2-channel.php:48
+msgid "Channel name"
+msgstr "Nazwa kanału"
+
+#: admin/views/wizard/step-push-2-channel.php:61
+msgid "Entity names"
+msgstr "Nazwy encji"
+
+#: admin/views/wizard/step-push-2-channel.php:71
+msgid "One per line (or comma-separated). Lowercase letters, numbers, and _ . : - only."
+msgstr "Jedna nazwa w wierszu (albo nazwy oddzielone przecinkami). Dozwolone są tylko małe litery, cyfry oraz znaki _ . : -"
+
+#: admin/views/wizard/step-push-2-channel.php:77
+msgid "Create channel"
+msgstr "Utwórz kanał"
+
+#: admin/views/wizard/step-push-3-snippet.php:26
+msgid "Channel ready — configure your device"
+msgstr "Kanał gotowy — skonfiguruj urządzenie"
+
+#: admin/views/wizard/step-push-3-snippet.php:31
+msgid "Save this token now — it will not be shown again."
+msgstr "Zapisz ten token teraz. Później nie będzie można go już wyświetlić."
+
+#: admin/views/wizard/step-push-3-snippet.php:37
+msgid "It's already embedded in the snippets below — you only need to copy it separately if you're configuring something this generator doesn't cover."
+msgstr "Token jest już wstawiony we fragmenty kodu poniżej. Skopiuj go osobno tylko wtedy, gdy konfigurujesz coś, czego ten generator nie obsługuje."
+
+#: admin/views/wizard/step-push-3-snippet.php:43
+msgid "The token for this channel was already shown once and cannot be displayed again. Regenerate it below to get a fresh one (the old one will stop working)."
+msgstr "Token tego kanału został już raz pokazany i nie można go wyświetlić ponownie. Aby dostać nowy, wygeneruj go poniżej. Stary token przestanie wtedy działać."
+
+#: admin/views/wizard/step-push-3-snippet.php:53
+msgid "Regenerate token"
+msgstr "Wygeneruj nowy token"
+
+#: admin/views/wizard/step-push-3-snippet.php:58
+msgid "Configuration snippet"
+msgstr "Fragment konfiguracji"
+
+#: admin/views/wizard/step-push-3-snippet.php:70
+msgid "(not yet verified on real hardware)"
+msgstr "(jeszcze niezweryfikowane na prawdziwym sprzęcie)"
+
+#: admin/views/wizard/step-push-3-snippet.php:87
+#: admin/views/wizard/step-push-3-snippet.php:93
+msgid "Check if data is arriving"
+msgstr "Sprawdź, czy dane docierają"
+
+#: admin/views/wizard/step-push-3-snippet.php:89
+msgid "Paste the snippet into your device first, then click below — we'll watch for the first reading for about a minute."
+msgstr "Najpierw wklej fragment kodu do urządzenia, a potem kliknij przycisk poniżej. Wtyczka będzie czekać na pierwszy odczyt przez około minutę."
+
+#: admin/views/wizard/step-push-3-snippet.php:118
+msgid "Last value"
+msgstr "Ostatnia wartość"
+
+#: admin/views/wizard/step-push-3-snippet.php:119
+msgid "Last received"
+msgstr "Ostatnio odebrano"
+
+#: includes/class-config-import-export.php:100
+msgid "The file is not valid JSON."
+msgstr "Plik nie jest poprawnym JSON-em."
+
+#: includes/class-config-import-export.php:104
+msgid "This does not look like an IoT Data Widget export — missing a \"connections\" list."
+msgstr "Ten plik nie wygląda na eksport z IoT Data Widget, bo nie zawiera listy „connections”."
+
+#: includes/class-config-import-export.php:151
+msgid "Entry is not a valid object."
+msgstr "Wpis nie jest poprawnym obiektem."
+
+#. translators: %s: nazwa brakującego pola
+#: includes/class-config-import-export.php:158
+#, php-format
+msgid "Missing required field \"%s\"."
+msgstr "Brakuje wymaganego pola „%s”."
+
+#. translators: %s: nierozpoznany typ konektora
+#: includes/class-config-import-export.php:167
+#, php-format
+msgid "Unknown connector type \"%s\"."
+msgstr "Typ konektora „%s” jest nieznany."
+
+#: includes/class-connector-manager.php:58
+msgid "Generic REST"
+msgstr "Generic REST"
+
+#: includes/class-connector-manager.php:73
+msgid "MQTT (polling)"
+msgstr "MQTT (odpytywanie)"
+
+#: includes/class-connector-manager.php:79
+msgid "Push (device sends data to your site)"
+msgstr "Push (urządzenie wysyła dane do witryny)"
+
+#. translators: %d: liczba minut
+#: includes/class-cron-value-cache.php:145
+#, php-format
+msgid "Every %d minutes (IoT Data Widget scheduled cache refresh)"
+msgstr "Co %d minut (zaplanowane odświeżanie pamięci podręcznej IoT Data Widget)"
+
+#. translators: %d: liczba minut
+#: includes/class-history-recorder.php:117
+#, php-format
+msgid "Every %d minutes (IoT Data Widget history)"
+msgstr "Co %d minut (historia IoT Data Widget)"
+
+#: includes/class-http-client.php:98
+msgid "The server redirected too many times."
+msgstr "Serwer przekierował zbyt wiele razy."
+
+#: includes/class-http-client.php:133
+msgid "The configured URL has no valid host (only http:// and https:// addresses are supported)."
+msgstr "Skonfigurowany adres nie ma prawidłowego hosta. Obsługiwane są tylko adresy http:// i https://."
+
+#. translators: %s: the host that was blocked
+#: includes/class-http-client.php:151
+#: includes/class-http-client.php:171
+#, php-format
+msgid "Refusing to connect to \"%s\" — it resolves to a link-local or reserved address (such as a cloud metadata service). This is always blocked."
+msgstr "Nie można połączyć się z „%s”. Adres wskazuje na zakres link-local lub zarezerwowany (np. usługę metadanych w chmurze). Takie połączenia są zawsze blokowane."
+
+#. translators: %s: the host that was blocked
+#: includes/class-http-client.php:252
+#, php-format
+msgid "Refusing to connect to \"%s\" — it is a local network address. If WordPress runs on the same network as the device, enable \"Allow local network addresses\" under IoT Data Widget → Settings. Otherwise, use a push channel instead."
+msgstr "Nie można połączyć się z „%s”, ponieważ jest to adres sieci lokalnej. Jeśli WordPress działa w tej samej sieci co urządzenie, włącz opcję „Zezwalaj na adresy sieci lokalnej” w menu IoT Data Widget → Ustawienia. W przeciwnym razie użyj kanału push."
+
+#: includes/class-local-network.php:205
+msgid "Local network addresses are now allowed, so this site can reach devices on your network. You can change this under IoT Data Widget → Settings."
+msgstr "Adresy sieci lokalnej są teraz dozwolone, więc ta witryna może łączyć się z urządzeniami w sieci lokalnej. To ustawienie można zmienić w menu IoT Data Widget → Ustawienia."
+
+#: includes/class-local-network.php:210
+msgid "Connections to local network addresses are blocked on this site, and only a network administrator can allow them (IoT Data Widget → Settings). Until then, choose push mode instead."
+msgstr "Połączenia z adresami sieci lokalnej są w tej witrynie zablokowane. Zezwolić na nie może tylko administrator sieci (IoT Data Widget → Ustawienia). Do tego czasu wybierz tryb push."
+
+#: includes/class-local-network.php:222
+msgid "Security update: IoT Data Widget now refuses connections to local network addresses unless \"Allow local network addresses\" is turned on. This site already connects to a device on your local network, so the setting was turned on automatically — nothing stopped working."
+msgstr "Aktualizacja bezpieczeństwa: IoT Data Widget odmawia teraz połączeń z adresami sieci lokalnej, chyba że jest włączona opcja „Zezwalaj na adresy sieci lokalnej”. Ta witryna już łączy się z urządzeniem w sieci lokalnej, dlatego opcja została włączona automatycznie. Wszystko działa jak dotąd."
+
+#: includes/class-local-network.php:224
+msgid "Review settings"
+msgstr "Sprawdź ustawienia"
+
+#: includes/class-local-network.php:226
+msgid "Dismiss"
+msgstr "Zamknij"
+
+#: includes/class-push-ingest.php:120
+msgid "Request body is too large."
+msgstr "Treść żądania jest zbyt duża."
+
+#: includes/class-push-ingest.php:126
+msgid "Invalid or missing token."
+msgstr "Token jest nieprawidłowy albo go brakuje."
+
+#. translators: %d: requests per minute allowed
+#: includes/class-push-ingest.php:133
+#, php-format
+msgid "Rate limit exceeded — max %d requests per minute for this channel."
+msgstr "Przekroczono limit żądań dla tego kanału (maksymalnie %d na minutę)."
+
+#: includes/class-push-ingest.php:143
+msgid "No valid reading found in the request body."
+msgstr "W treści żądania nie ma prawidłowego odczytu."
+
+#. translators: %s: the rejected entity name as sent by the device
+#: includes/class-push-ingest.php:348
+#, php-format
+msgid "Invalid entity name: \"%s\"."
+msgstr "Nazwa encji „%s” jest nieprawidłowa."
+
+#. translators: %s: entity name not on the channel's whitelist
+#: includes/class-push-ingest.php:356
+#, php-format
+msgid "Unknown entity for this channel: \"%s\". Add it to the channel's entity list first."
+msgstr "Ten kanał nie zna encji „%s”. Najpierw dodaj ją do listy encji kanału."
+
+#. translators: %s: entity name
+#: includes/class-push-ingest.php:366
+#, php-format
+msgid "Missing value for entity \"%s\"."
+msgstr "Brakuje wartości dla encji „%s”."
+
+#: includes/class-push-snippet-generator.php:104
+msgid "Your site's address currently resolves to a local hostname (\"localhost\"/127.0.0.1/a .local/.test/.local domain) — a physical device cannot reach that address, since to the device \"localhost\" means itself. This snippet will only work once pasted on your real, publicly (or at least LAN-)reachable site; it's fine to copy it now for reference, but test it against your actual site address, not this local development one."
+msgstr "Adres tej witryny wskazuje teraz na nazwę hosta lokalnego („localhost”, 127.0.0.1 albo domenę .local lub .test). Fizyczne urządzenie nie połączy się z takim adresem, bo dla urządzenia „localhost” oznacza je samo. Ten fragment kodu zadziała dopiero w prawdziwej witrynie, dostępnej publicznie (albo przynajmniej w sieci lokalnej). Możesz go teraz skopiować do wglądu, ale testuj go z prawdziwym adresem witryny, a nie z tym lokalnym adresem deweloperskim."
+
+#. translators: %s: entity name
+#: includes/class-push-snippet-generator.php:227
+#, php-format
+msgid "Webhook for \"%s\" (relay/switch state) — Settings → Actions/Webhooks in the Shelly app"
+msgstr "Webhook dla „%s” (stan przekaźnika/przełącznika) — Ustawienia → Akcje/Webhooki w aplikacji Shelly"
+
+#: includes/class-push-snippet-generator.php:233
+msgid "Event \"Switch On\" — URL"
+msgstr "Zdarzenie „Switch On” — URL"
+
+#: includes/class-push-snippet-generator.php:235
+msgid "Event \"Switch Off\" — URL"
+msgstr "Zdarzenie „Switch Off” — URL"
+
+#: includes/class-push-snippet-generator.php:258
+msgid "Script (Scripts in the Shelly app/panel) — periodic numeric readings"
+msgstr "Skrypt (Scripts w aplikacji/panelu Shelly) — okresowe odczyty liczbowe"
+
+#: includes/class-push-snippet-generator.php:279
+msgid "Paste the script under Scripts in the device web UI (or the Shelly app), start it, then use \"Check if data is arriving\" below."
+msgstr "Wklej skrypt w sekcji Scripts w panelu WWW urządzenia (albo w aplikacji Shelly) i uruchom go. Potem użyj przycisku „Sprawdź, czy dane docierają” poniżej."
+
+#: includes/class-push-snippet-generator.php:283
+msgid "No entities declared for this channel yet."
+msgstr "Dla tego kanału nie zadeklarowano jeszcze żadnych encji."
+
+#. translators: %s: entity name
+#: includes/class-push-snippet-generator.php:329
+#, php-format
+msgid "Console rule for \"%s\" (relay/switch state)"
+msgstr "Reguła konsoli dla „%s” (stan przekaźnika/przełącznika)"
+
+#: includes/class-push-snippet-generator.php:337
+msgid "WebSend cannot set custom headers, so the token travels in the URL (see the warning under \"Security\" in this plugin's documentation). WebSend also has a length limit (511 characters on most builds) — confirmed on real hardware that a channel token plus this rule fits with plenty of room to spare."
+msgstr "WebSend nie pozwala ustawić własnych nagłówków, dlatego token jest przesyłany w adresie URL (patrz ostrzeżenie w sekcji „Bezpieczeństwo” dokumentacji wtyczki). WebSend ma też limit długości (511 znaków w większości wersji firmware). Test na prawdziwym urządzeniu potwierdził, że token kanału razem z tą regułą mieści się w limicie z dużym zapasem."
+
+#: includes/class-push-snippet-generator.php:338
+msgid "For a numeric sensor (temperature, power...), replace \"Power1#State\" with the matching Tasmota rule trigger for your sensor and \"%value%\" stays the same."
+msgstr "Dla czujnika liczbowego (temperatura, moc…) zastąp „Power1#State” odpowiednim wyzwalaczem reguły Tasmoty dla tego czujnika. „%value%” zostaw bez zmian."
+
+#. translators: %s: entity name
+#: includes/class-push-snippet-generator.php:382
+#, php-format
+msgid "YAML for \"%s\" — add under your existing sensor"
+msgstr "YAML dla „%s” — dodaj pod istniejącym czujnikiem"
+
+#: includes/class-push-snippet-generator.php:390
+msgid "Not yet verified against real ESPHome hardware — built from the official http_request component documentation. ESPHome supports custom headers, so the token travels in a header here, not the URL."
+msgstr "Jeszcze niezweryfikowane na prawdziwym urządzeniu ESPHome. Fragment powstał na podstawie oficjalnej dokumentacji komponentu http_request. ESPHome obsługuje własne nagłówki, dlatego token jest tu przesyłany w nagłówku, a nie w adresie URL."
+
+#: includes/class-push-snippet-generator.php:440
+msgid "configuration.yaml — rest_command (add once)"
+msgstr "configuration.yaml — rest_command (dodaj raz)"
+
+#. translators: %s: entity name
+#: includes/class-push-snippet-generator.php:447
+#, php-format
+msgid "Automation for \"%s\" — one per entity you want to push"
+msgstr "Automatyzacja dla „%s” — jedna na każdą encję, którą chcesz wysyłać"
+
+#: includes/class-push-snippet-generator.php:455
+msgid "Not yet verified against a real Home Assistant instance — built from the official rest_command integration documentation."
+msgstr "Jeszcze niezweryfikowane na prawdziwej instancji Home Assistanta. Fragment powstał na podstawie oficjalnej dokumentacji integracji rest_command."
+
+#: includes/class-push-snippet-generator.php:456
+msgid "Home Assistant can usually reach your site's public URL directly and be reached back the same way — pull mode (Home Assistant connector) is often simpler if your WordPress and Home Assistant are on the same network. Use push here mainly if your site is hosted externally and Home Assistant is not otherwise reachable from it (e.g. no Nabu Casa/reverse proxy)."
+msgstr "Home Assistant zwykle może łączyć się bezpośrednio z publicznym adresem URL witryny, a witryna — z nim. Jeśli WordPress i Home Assistant działają w tej samej sieci, tryb pull (konektor Home Assistant) jest często prostszy. Tryb push wybierz głównie wtedy, gdy witryna działa na zewnętrznym hostingu, a Home Assistant nie jest z niej osiągalny w inny sposób (np. bez Nabu Casa albo reverse proxy)."
+
+#: includes/class-renderer.php:174
+#: blocks/iot-widget/src/edit.js:507
+msgid "This entity holds an on/off-style value, not a continuous number — Gauge, Chart, and Mini trend aren't available for it. Use Status list (or Card) instead."
+msgstr "Ta encja ma wartość typu włączone/wyłączone, a nie liczbę ciągłą. Style Wskaźnik, Wykres i Mini trend nie są dla niej dostępne. Użyj stylu Lista statusów (albo Karta)."
+
+#. translators: 1: the unrecognized style name as typed in the shortcode, 2: comma-separated list of valid style names
+#: includes/class-renderer.php:201
+#, php-format
+msgid "Unknown style \"%1$s\" — valid styles are: %2$s."
+msgstr "Styl „%1$s” jest nieznany. Dopuszczalne style: %2$s."
+
+#: includes/class-renderer.php:231
+#: includes/class-shortcode.php:154
+msgid "This style requires the Pro version."
+msgstr "Ten styl wymaga wersji Pro."
+
+#. translators: %s: error message
+#: includes/class-renderer.php:566
+#, php-format
+msgid "IoT Data Widget: %s (visible to administrators only)"
+msgstr "IoT Data Widget: %s (widoczne tylko dla administratorów)"
+
+#: includes/class-renderer.php:576
+msgid "Upgrade to Pro"
+msgstr "Przejdź na Pro"
+
+#. translators: %s: local date/time the value was last updated
+#: includes/class-renderer.php:705
+#, php-format
+msgid "Updated %s"
+msgstr "Zaktualizowano %s"
+
+#: includes/class-renderer.php
+msgid "Data may be out of date"
+msgstr "Dane mogą być nieaktualne"
+
+#: includes/class-rest-api.php:131
+msgid "Skip the cache and force a fresh fetch from the source (v1.3)."
+msgstr "Pomiń pamięć podręczną i pobierz dane bezpośrednio ze źródła (v1.3)."
+
+#: includes/class-rest-api.php:241
+msgid "Testing…"
+msgstr "Testowanie…"
+
+#: includes/class-rest-api.php:243
+msgid "No entities found for this connection."
+msgstr "Nie znaleziono encji dla tego połączenia."
+
+#: includes/class-rest-api.php:244
+msgid "No entities match your search/filter — try a different term."
+msgstr "Żadna encja nie pasuje do wyszukiwania lub filtra. Spróbuj innego wyrażenia."
+
+#: includes/class-rest-api.php:248
+msgid "Could not copy — select the text and copy it manually."
+msgstr "Nie udało się skopiować. Zaznacz tekst i skopiuj go ręcznie."
+
+#. translators: %s is replaced client-side (JS) with the detected local-network host — keep the literal "%s".
+#: includes/class-rest-api.php:258
+#, php-format
+msgid "This looks like a local network address (%s) — it will only work if your WordPress server is on the same network as the device."
+msgstr "To wygląda na adres sieci lokalnej (%s). Zadziała tylko wtedy, gdy serwer WordPress jest w tej samej sieci co urządzenie."
+
+#: includes/class-rest-api.php:264
+#: includes/premium/admin-views/connector-fields-rest-presets.php:56
+msgid "Device IP address"
+msgstr "Adres IP urządzenia"
+
+#: includes/class-rest-api.php:265
+msgid "Supla direct link"
+msgstr "Bezpośredni odnośnik Supla"
+
+#: includes/class-rest-api.php:272
+msgid "Password (Tasmota WebPassword)"
+msgstr "Hasło (WebPassword Tasmoty)"
+
+#: includes/class-rest-api.php:554
+msgid "MQTT connections can't be tested instantly — save the connection, then the first value will appear after the next poll (or once the listener receives a retained message)."
+msgstr "Połączeń MQTT nie da się przetestować od razu. Zapisz połączenie. Pierwsza wartość pojawi się po kolejnym odpytaniu (albo gdy nasłuch odbierze zachowaną wiadomość)."
+
+#. translators: %d: number of entities found
+#: includes/class-rest-api.php:592
+#, php-format
+msgid "Found %d entity."
+msgid_plural "Found %d entities."
+msgstr[0] "Znaleziono %d encję."
+msgstr[1] "Znaleziono %d encje."
+msgstr[2] "Znaleziono %d encji."
+
+#: includes/class-rest-api.php:733
+msgid "Not found."
+msgstr "Nie znaleziono."
+
+#: includes/class-shortcode.php:167
+msgid "Fill in the \"connection\" and \"entity\" attributes in the [iotdw_widget] shortcode."
+msgstr "Uzupełnij atrybuty „connection” i „entity” w shortcodzie [iotdw_widget]."
+
+#. translators: %s: connection name or ID given in the shortcode
+#: includes/class-shortcode.php:180
+#: includes/class-shortcode.php:483
+#: includes/class-shortcode.php:554
+#, php-format
+msgid "Connection \"%s\" was not found."
+msgstr "Nie znaleziono połączenia „%s”."
+
+#: includes/class-shortcode.php:456
+msgid "Powered by IoT Data Widget"
+msgstr "Powered by IoT Data Widget"
+
+#: includes/class-shortcode.php:470
+msgid "Fill in the \"connection\" and \"entities\" attributes (comma-separated entity IDs) in the [iotdw_widget style=\"list\"] shortcode."
+msgstr "Uzupełnij atrybuty „connection” i „entities” (lista identyfikatorów encji oddzielonych przecinkami) w shortcodzie [iotdw_widget style=\"list\"]."
+
+#: includes/class-shortcode.php:535
+msgid "Add at least one entity to the [iotdw_widget style=\"grid\"] shortcode via the \"items\" attribute."
+msgstr "Dodaj co najmniej jedną encję do shortcode'u [iotdw_widget style=\"grid\"] przez atrybut „items”."
+
+#: includes/class-shortcode.php:536
+msgid "The \"items\" attribute of the [iotdw_widget style=\"grid\"] shortcode must be a comma-separated list of \"connection|entity\" pairs (e.g. items=\"Home|sensor.temperature,Workshop|relay_state\") — none of the given items matched that format."
+msgstr "Atrybut „items” shortcode'u [iotdw_widget style=\"grid\"] musi być listą par „połączenie|encja” oddzielonych przecinkami (np. items=\"Home|sensor.temperature,Workshop|relay_state\"). Żaden z podanych elementów nie ma takiego formatu."
+
+#. translators: %s: PHP error message
+#: includes/class-shortcode.php:791
+#: includes/class-shortcode.php:830
+#, php-format
+msgid "Unexpected connector error: %s"
+msgstr "Nieoczekiwany błąd konektora: %s"
+
+#: includes/class-shortcode.php:945
+#: includes/class-value-normalizer.php:103
+#: blocks/iot-widget/src/edit.js:662
+msgid "On"
+msgstr "Wł."
+
+#: includes/class-shortcode.php:946
+#: includes/class-value-normalizer.php:105
+#: blocks/iot-widget/src/edit.js:672
+msgid "Off"
+msgstr "Wył."
+
+#. translators: %s: the local-network host/IP that was configured
+#: includes/connectors/abstract-connector.php:141
+#, php-format
+msgid "This looks like a local network address (%s) — it will only work if your WordPress server is on the same network as the device. Most external/shared hosting can't reach it; consider Shelly Cloud, a publicly reachable Home Assistant instance, or a differently-reachable REST endpoint instead."
+msgstr "To wygląda na adres sieci lokalnej (%s). Zadziała tylko wtedy, gdy serwer WordPress jest w tej samej sieci co urządzenie. Większość zewnętrznych i współdzielonych hostingów nie połączy się z takim adresem. Rozważ Shelly Cloud, publicznie dostępną instancję Home Assistanta albo inny endpoint REST dostępny z internetu."
+
+#: includes/connectors/class-ha-connector.php:75
+#: includes/connectors/class-ha-connector.php:159
+msgid "Invalid or expired Home Assistant access token."
+msgstr "Token dostępu Home Assistanta jest nieprawidłowy albo wygasł."
+
+#. translators: %s: entity ID
+#: includes/connectors/class-ha-connector.php:83
+#, php-format
+msgid "Entity \"%s\" was not found in Home Assistant."
+msgstr "Nie znaleziono encji „%s” w Home Assistant."
+
+#. translators: %d: HTTP status code
+#: includes/connectors/class-ha-connector.php:93
+#: includes/connectors/class-ha-connector.php:167
+#, php-format
+msgid "Home Assistant returned an unexpected response code: %d."
+msgstr "Home Assistant zwrócił nieoczekiwany kod odpowiedzi: %d."
+
+#: includes/connectors/class-ha-connector.php:103
+#: includes/connectors/class-ha-connector.php:177
+msgid "Invalid response from Home Assistant."
+msgstr "Home Assistant zwrócił nieprawidłową odpowiedź."
+
+#: includes/connectors/class-push-channel-connector.php:57
+msgid "Push channel connector is missing its connection ID."
+msgstr "Konektorowi kanału push brakuje identyfikatora połączenia."
+
+#. translators: %s: entity name
+#: includes/connectors/class-push-channel-connector.php:67
+#, php-format
+msgid "\"%s\" is not a declared entity for this push channel — check the channel's entity list."
+msgstr "Encja „%s” nie jest zadeklarowana w tym kanale push. Sprawdź listę encji kanału."
+
+#: includes/connectors/class-push-channel-connector.php:75
+msgid "No data received yet for this entity — make sure the device is configured and has sent at least one reading."
+msgstr "Dla tej encji nie odebrano jeszcze żadnych danych. Upewnij się, że urządzenie jest skonfigurowane i wysłało co najmniej jeden odczyt."
+
+#: includes/connectors/class-rest-connector.php:104
+msgid "Missing URL in the connection settings."
+msgstr "W ustawieniach połączenia brakuje adresu URL."
+
+#: includes/connectors/class-rest-connector.php:174
+msgid "Authorization failed — check the auth header in the connection settings."
+msgstr "Autoryzacja nie powiodła się. Sprawdź nagłówek autoryzacji w ustawieniach połączenia."
+
+#. translators: %d: HTTP status code
+#: includes/connectors/class-rest-connector.php:182
+#, php-format
+msgid "Server returned an unexpected response code: %d."
+msgstr "Serwer zwrócił nieoczekiwany kod odpowiedzi: %d."
+
+#: includes/connectors/class-rest-connector.php:192
+msgid "Server response is not valid JSON."
+msgstr "Odpowiedź serwera nie jest poprawnym JSON-em."
+
+#. translators: %s: JSONPath given in the widget
+#: includes/connectors/class-rest-connector.php:204
+#, php-format
+msgid "Path \"%s\" was not found in the JSON response."
+msgstr "Nie znaleziono ścieżki „%s” w odpowiedzi JSON."
+
+#: includes/connectors/class-rest-connector.php:333
+msgid "Tasmota devices sometimes refuse HTTP API requests with an empty response until \"SetOption128 1\" is set in the device console (Tools → Console in the web UI) — try that if the device otherwise works fine in its own web interface."
+msgstr "Urządzenia Tasmota czasem odrzucają żądania HTTP API pustą odpowiedzią, dopóki w konsoli urządzenia nie zostanie ustawione „SetOption128 1” (Narzędzia → Konsola w panelu WWW). Spróbuj tego, jeśli urządzenie poza tym działa poprawnie we własnym panelu WWW."
+
+#: includes/premium/admin-views/alert-rule-form.php:85
+msgid "Value goes above"
+msgstr "Wartość przekroczy"
+
+#: includes/premium/admin-views/alert-rule-form.php:88
+msgid "Value goes below"
+msgstr "Wartość spadnie poniżej"
+
+#: includes/premium/admin-views/alert-rule-form.php:94
+msgid "Threshold"
+msgstr "Próg"
+
+#: includes/premium/admin-views/alert-rule-form.php:106
+#: includes/premium/admin-views/alert-rules-page.php:43
+msgid "Notify via"
+msgstr "Powiadom przez"
+
+#: includes/premium/admin-views/alert-rule-form.php:110
+#: includes/premium/admin-views/alert-rules-page.php:75
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/premium/admin-views/alert-rule-form.php:113
+#: includes/premium/admin-views/alert-rules-page.php:75
+msgid "Webhook"
+msgstr "Webhook"
+
+#: includes/premium/admin-views/alert-rule-form.php:119
+msgid "Email address / Webhook URL"
+msgstr "Adres e-mail / adres URL webhooka"
+
+#: includes/premium/admin-views/alert-rule-form.php:135
+#: includes/premium/admin-views/alert-rules-page.php:92
+msgid "Add alert rule"
+msgstr "Dodaj regułę alertu"
+
+#: includes/premium/admin-views/alert-rules-page.php:25
+msgid "Alert rule saved."
+msgstr "Reguła alertu zapisana."
+
+#: includes/premium/admin-views/alert-rules-page.php:26
+msgid "Alert rule deleted."
+msgstr "Reguła alertu usunięta."
+
+#: includes/premium/admin-views/alert-rules-page.php:33
+msgid "Get notified by email or webhook when a value crosses a threshold — even for entities that aren't shown in any widget on your site."
+msgstr "Otrzymuj powiadomienia e-mailem lub przez webhook, gdy wartość przekroczy próg. Działa to także dla encji, których nie pokazuje żaden widżet w witrynie."
+
+#: includes/premium/admin-views/alert-rules-page.php:66
+msgid "Delete this alert rule?"
+msgstr "Usunąć tę regułę alertu?"
+
+#: includes/premium/admin-views/alert-rules-page.php:82
+msgid "Add your first alert rule"
+msgstr "Dodaj pierwszą regułę alertu"
+
+#: includes/premium/admin-views/alert-rules-page.php:91
+msgid "Edit alert rule"
+msgstr "Edytuj regułę alertu"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:26
+msgid "Requires SSH/server access."
+msgstr "Wymaga dostępu SSH/do serwera."
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:27
+msgid "This mode runs a separate background process on your server (outside WordPress and this admin panel) to get updates the moment they happen, instead of waiting for the next poll. If you only have normal WordPress hosting without shell access, use \"MQTT (polling)\" instead — it needs no server setup."
+msgstr "Ten tryb uruchamia na serwerze osobny proces w tle (poza WordPressem i tym panelem). Dzięki temu aktualizacje docierają od razu, bez czekania na kolejne odpytanie. Jeśli masz zwykły hosting WordPressa bez dostępu do powłoki, użyj trybu „MQTT (odpytywanie)”. Ten tryb nie wymaga konfiguracji serwera."
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:30
+msgid "See docs/mqtt-listener-deployment.md in the plugin folder for the step-by-step setup guide."
+msgstr "Instrukcja konfiguracji krok po kroku jest w pliku docs/mqtt-listener-deployment.md w folderze wtyczki."
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:36
+msgid "MQTT access mode"
+msgstr "Tryb dostępu MQTT"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:40
+msgid "Direct broker connection (TCP)"
+msgstr "Bezpośrednie połączenie z brokerem (TCP)"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:43
+msgid "EMQX REST API"
+msgstr "EMQX REST API"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:47
+msgid "\"Direct broker connection\" works with any standard broker (Mosquitto, EMQX, HiveMQ...) but requires your hosting to allow outgoing TCP connections on the broker port — many budget/shared hosts block this. \"EMQX REST API\" works over plain HTTPS instead, but requires an EMQX broker with the retainer feature enabled."
+msgstr "„Bezpośrednie połączenie z brokerem” działa z każdym standardowym brokerem (Mosquitto, EMQX, HiveMQ…). Wymaga jednak, żeby hosting zezwalał na wychodzące połączenia TCP na porcie brokera, a wiele tanich i współdzielonych hostingów je blokuje. „EMQX REST API” działa przez zwykłe HTTPS, ale wymaga brokera EMQX z włączoną funkcją retainer."
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:50
+msgid "EMQX REST API: enter your EMQX REST API base URL in the \"URL\" field below (e.g. \"https://emqx.local:18083/api/v5\") and, if required, a full header in \"Authorization\" (e.g. \"Authorization: Basic xxx\")."
+msgstr "EMQX REST API: wpisz bazowy adres EMQX REST API w polu „URL” poniżej (np. „https://emqx.local:18083/api/v5”). Jeśli broker wymaga autoryzacji, wpisz pełny nagłówek w polu „Authorization” (np. „Authorization: Basic xxx”)."
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:55
+msgid "Broker host"
+msgstr "Host brokera"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:68
+msgid "Broker port"
+msgstr "Port brokera"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:82
+msgid "Use TLS"
+msgstr "Użyj TLS"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:92
+msgid "Connect over TLS (mqtts)"
+msgstr "Połącz przez TLS (mqtts)"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:97
+msgid "Username"
+msgstr "Nazwa użytkownika"
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:107
+msgid "Leave empty for brokers that allow anonymous connections."
+msgstr "Zostaw puste, jeśli broker zezwala na połączenia anonimowe."
+
+#: includes/premium/admin-views/connector-fields-mqtt.php:111
+msgid "Password"
+msgstr "Hasło"
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:23
+msgid "Setup mode"
+msgstr "Tryb konfiguracji"
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:27
+msgid "Advanced (custom URL + JSONPath)"
+msgstr "Zaawansowany (własny URL + JSONPath)"
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:30
+msgid "Choose device type"
+msgstr "Wybierz typ urządzenia"
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:34
+msgid "\"Choose device type\" fills in the URL and lets you pick metrics by name instead of writing JSONPath by hand — for supported local devices (Shelly, Tasmota...). \"Advanced\" is the original mode: any JSON API, any URL, JSONPath you write yourself."
+msgstr "Opcja „Wybierz typ urządzenia” uzupełnia adres URL i pozwala wybierać metryki po nazwie, bez ręcznego pisania JSONPath. Działa z obsługiwanymi urządzeniami lokalnymi (Shelly, Tasmota…). Tryb „Zaawansowany” to pierwotny tryb: dowolne API JSON, dowolny adres URL i własne wyrażenie JSONPath."
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:39
+msgid "Device type"
+msgstr "Typ urządzenia"
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:49
+msgid " (beta — not yet verified against real hardware)"
+msgstr " (beta — jeszcze niezweryfikowane na prawdziwym sprzęcie)"
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:78
+msgid "Local IP address or hostname of the device on your network."
+msgstr "Lokalny adres IP albo nazwa hosta urządzenia w sieci lokalnej."
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:81
+msgid "Works only if your WordPress server is on the same local network as this device. Most external/shared hosting cannot reach a private address like this — if your site is hosted externally, this connection will never succeed."
+msgstr "Działa tylko wtedy, gdy serwer WordPress jest w tej samej sieci lokalnej co to urządzenie. Większość zewnętrznych i współdzielonych hostingów nie połączy się z takim adresem prywatnym. Jeśli witryna działa na zewnętrznym hostingu, to połączenie nigdy się nie uda."
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:84
+msgid "Paste the full \"direct link\" from your Supla Cloud channel settings (Public URL / direct access). Works from any hosting — Supla is reached over the internet, not your local network."
+msgstr "Wklej pełny „odnośnik bezpośredni” z ustawień kanału w Supla Cloud (Publiczny URL / dostęp bezpośredni). Działa z każdego hostingu, bo wtyczka łączy się z Suplą przez internet, a nie przez sieć lokalną."
+
+#: includes/premium/admin-views/connector-fields-rest-presets.php:87
+msgid "This link contains your Supla access key — treat it like a password. Don't share it or paste it into support requests; it's never shown in the diagnostics report."
+msgstr "Ten odnośnik zawiera klucz dostępu do Supli. Traktuj go jak hasło. Nie udostępniaj go i nie wklejaj w zgłoszeniach do pomocy technicznej. Raport diagnostyczny nigdy go nie pokazuje."
+
+#: includes/premium/admin-views/connector-fields-shelly-cloud.php:20
+msgid "Server address"
+msgstr "Adres serwera"
+
+#: includes/premium/admin-views/connector-fields-shelly-cloud.php:31
+msgid "From the Shelly app: User Settings → Authorization cloud key. Shown together with the key below on the same screen."
+msgstr "Z aplikacji Shelly: Ustawienia użytkownika → Authorization cloud key. Ta wartość jest pokazywana na tym samym ekranie co klucz poniżej."
+
+#: includes/premium/admin-views/connector-fields-shelly-cloud.php:36
+msgid "Device ID"
+msgstr "ID urządzenia"
+
+#: includes/premium/admin-views/connector-fields-shelly-cloud.php:48
+msgid "Authorization cloud key"
+msgstr "Klucz autoryzacyjny (cloud key)"
+
+#: includes/premium/admin-views/connector-fields-test-entity-descriptions.php:20
+msgid "For MQTT, this is the topic name."
+msgstr "Dla MQTT to nazwa topicu."
+
+#: includes/premium/admin-views/connector-fields-test-entity-descriptions.php:23
+msgid "For device presets, use one of the suggested names below (start typing to see them) — not the raw field name from the device's own JSON response, which is often different."
+msgstr "Dla presetów urządzeń użyj jednej z podpowiadanych nazw poniżej (zacznij pisać, żeby je zobaczyć). Nie używaj surowej nazwy pola z odpowiedzi JSON urządzenia, bo często jest inna."
+
+#: includes/premium/admin-views/connector-fields-token-descriptions.php:20
+msgid "Tasmota's \"WebPassword\" console setting, if you set one — leave empty for an unsecured device. Tasmota doesn't support an Authorization header; the plugin sends this as \"user=admin&password=...\" in the request instead."
+msgstr "Ustawienie „WebPassword” z konsoli Tasmoty, jeśli zostało ustawione. Dla niezabezpieczonego urządzenia zostaw puste. Tasmota nie obsługuje nagłówka Authorization, dlatego wtyczka wysyła hasło w żądaniu jako „user=admin&password=…”."
+
+#: includes/premium/admin-views/email-report-form.php:81
+#: includes/premium/admin-views/email-reports-page.php:42
+#: includes/premium/class-connector-presets.php:123
+msgid "Frequency"
+msgstr "Częstotliwość"
+
+#: includes/premium/admin-views/email-report-form.php:85
+#: includes/premium/admin-views/email-reports-page.php:70
+#: includes/premium/class-email-report-dispatcher.php:147
+msgid "Daily"
+msgstr "Codziennie"
+
+#: includes/premium/admin-views/email-report-form.php:88
+#: includes/premium/admin-views/email-reports-page.php:70
+#: includes/premium/class-email-report-dispatcher.php:146
+msgid "Weekly"
+msgstr "Co tydzień"
+
+#: includes/premium/admin-views/email-report-form.php:92
+msgid "Checked every hour; sent once the full period (24h/7 days) has elapsed since the last report."
+msgstr "Wtyczka sprawdza to co godzinę. Raport zostanie wysłany, gdy od poprzedniego minie pełny okres (24 h lub 7 dni)."
+
+#: includes/premium/admin-views/email-report-form.php:97
+msgid "Email address"
+msgstr "Adres e-mail"
+
+#: includes/premium/admin-views/email-report-form.php:113
+#: includes/premium/admin-views/email-reports-page.php:88
+msgid "Add email report"
+msgstr "Dodaj raport e-mail"
+
+#: includes/premium/admin-views/email-reports-page.php:25
+msgid "Email report saved."
+msgstr "Raport e-mail zapisany."
+
+#: includes/premium/admin-views/email-reports-page.php:26
+msgid "Email report deleted."
+msgstr "Raport e-mail usunięty."
+
+#: includes/premium/admin-views/email-reports-page.php:33
+msgid "Get a periodic summary (minimum/maximum/average) emailed to you for one entity — e.g. weekly energy usage. Only entities that already have history recorded (used by a Chart/Sparkline widget, or manually tracked) have data to summarize."
+msgstr "Otrzymuj e-mailem cykliczne podsumowanie (minimum, maksimum, średnia) jednej encji, np. cotygodniowe zużycie energii. Dane do podsumowania mają tylko encje z zarejestrowaną historią (użyte w widżecie Wykres lub Mini trend albo śledzone ręcznie)."
+
+#: includes/premium/admin-views/email-reports-page.php:36
+msgid "Configured reports"
+msgstr "Skonfigurowane raporty"
+
+#: includes/premium/admin-views/email-reports-page.php:43
+msgid "Sent to"
+msgstr "Wysyłane do"
+
+#: includes/premium/admin-views/email-reports-page.php:44
+msgid "Last sent"
+msgstr "Ostatnio wysłano"
+
+#: includes/premium/admin-views/email-reports-page.php:62
+msgid "Delete this email report?"
+msgstr "Usunąć ten raport e-mail?"
+
+#: includes/premium/admin-views/email-reports-page.php:72
+msgid "Never yet"
+msgstr "Jeszcze nigdy"
+
+#: includes/premium/admin-views/email-reports-page.php:77
+msgid "No email reports configured yet."
+msgstr "Nie skonfigurowano jeszcze żadnych raportów e-mail."
+
+#: includes/premium/admin-views/email-reports-page.php:78
+msgid "Add your first email report"
+msgstr "Dodaj pierwszy raport e-mail"
+
+#: includes/premium/admin-views/email-reports-page.php:87
+msgid "Edit email report"
+msgstr "Edytuj raport e-mail"
+
+#. translators: 1: site name, 2: entity label
+#: includes/premium/class-alert-notifier.php:66
+#, php-format
+msgid "[%1$s] Alert: %2$s"
+msgstr "[%1$s] Alert: %2$s"
+
+#: includes/premium/class-alert-notifier.php:145
+msgid "above"
+msgstr "powyżej"
+
+#: includes/premium/class-alert-notifier.php:146
+msgid "below"
+msgstr "poniżej"
+
+#. translators: 1: entity label, 2: current value, 3: "above"/"below", 4: threshold, 5: site URL, 6: time
+#: includes/premium/class-alert-notifier.php:150
+#, php-format
+msgid ""
+"%1$s is now %2$s — %3$s the threshold of %4$s.\n"
+"\n"
+"Site: %5$s\n"
+"Time: %6$s"
+msgstr ""
+"%1$s ma teraz wartość %2$s — %3$s progu %4$s.\n"
+"\n"
+"Strona: %5$s\n"
+"Czas: %6$s"
+
+#: includes/premium/class-connector-presets.php:48
+#: includes/premium/class-connector-presets.php:90
+msgid "Temperature"
+msgstr "Temperatura"
+
+#: includes/premium/class-connector-presets.php:54
+#: includes/premium/class-connector-presets.php:96
+#: includes/premium/class-connector-presets.php:211
+msgid "Power"
+msgstr "Moc"
+
+#: includes/premium/class-connector-presets.php:60
+#: includes/premium/class-connector-presets.php:102
+#: includes/premium/class-connector-presets.php:217
+msgid "Relay state"
+msgstr "Stan przekaźnika"
+
+#: includes/premium/class-connector-presets.php:111
+msgid "Voltage"
+msgstr "Napięcie"
+
+#: includes/premium/class-connector-presets.php:117
+msgid "Current"
+msgstr "Prąd"
+
+#: includes/premium/class-connector-presets.php:129
+msgid "Total energy"
+msgstr "Energia całkowita"
+
+#: includes/premium/class-connector-presets.php:224
+msgid "Relay 1 state"
+msgstr "Stan przekaźnika 1"
+
+#: includes/premium/class-connector-presets.php:231
+msgid "Relay 2 state"
+msgstr "Stan przekaźnika 2"
+
+#: includes/premium/class-connector-presets.php:238
+msgid "Relay 3 state"
+msgstr "Stan przekaźnika 3"
+
+#: includes/premium/class-connector-presets.php:245
+msgid "Relay 4 state"
+msgstr "Stan przekaźnika 4"
+
+#: includes/premium/class-connector-presets.php:252
+msgid "Relay 5 state"
+msgstr "Stan przekaźnika 5"
+
+#: includes/premium/class-connector-presets.php:259
+msgid "Relay 6 state"
+msgstr "Stan przekaźnika 6"
+
+#: includes/premium/class-connector-presets.php:266
+msgid "Relay 7 state"
+msgstr "Stan przekaźnika 7"
+
+#: includes/premium/class-connector-presets.php:273
+msgid "Relay 8 state"
+msgstr "Stan przekaźnika 8"
+
+#: includes/premium/class-connector-presets.php:314
+msgid "Supla (direct link)"
+msgstr "Supla (odnośnik bezpośredni)"
+
+#: includes/premium/class-connector-presets.php:338
+msgid "Channel state"
+msgstr "Stan kanału"
+
+#: includes/premium/class-connector-presets.php:344
+msgid "Device online"
+msgstr "Urządzenie online"
+
+#: includes/premium/class-connector-presets.php:350
+msgid "Current overload"
+msgstr "Przeciążenie prądowe"
+
+#. translators: 1: site name, 2: "Daily"/"Weekly", 3: entity label
+#: includes/premium/class-email-report-dispatcher.php:151
+#, php-format
+msgid "[%1$s] %2$s report: %3$s"
+msgstr "[%1$s] Raport %2$s: %3$s"
+
+#. translators: 1: period start, 2: period end
+#: includes/premium/class-email-report-dispatcher.php:176
+#, php-format
+msgid "%1$s to %2$s (UTC)"
+msgstr "%1$s do %2$s (UTC)"
+
+#. translators: %s: entity label
+#: includes/premium/class-email-report-dispatcher.php:188
+#, php-format
+msgid "No data was recorded for %s in this period."
+msgstr "W tym okresie nie zarejestrowano danych: %s."
+
+#: includes/premium/class-email-report-dispatcher.php:209
+#: blocks/iot-widget/src/edit.js:694
+msgid "Minimum"
+msgstr "Minimum"
+
+#: includes/premium/class-email-report-dispatcher.php:212
+#: blocks/iot-widget/src/edit.js:699
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: includes/premium/class-email-report-dispatcher.php:214
+msgid "Average"
+msgstr "Średnia"
+
+#: includes/premium/class-email-report-dispatcher.php:216
+msgid "Readings"
+msgstr "Odczyty"
+
+#: includes/premium/class-email-report-dispatcher.php:218
+msgid "Weekly report."
+msgstr "Raport tygodniowy."
+
+#: includes/premium/class-email-report-dispatcher.php:218
+msgid "Daily report."
+msgstr "Raport dzienny."
+
+#: includes/premium/class-embed.php:257
+msgid "Link unavailable"
+msgstr "Odnośnik niedostępny"
+
+#: includes/premium/class-embed.php:263
+msgid "This link is invalid or has expired."
+msgstr "Ten odnośnik jest nieprawidłowy albo wygasł."
+
+#: includes/premium/class-embed.php:294
+msgid "Public embed (IoT Data Widget)"
+msgstr "Publiczne osadzenie (IoT Data Widget)"
+
+#: includes/premium/class-embed.php:316
+msgid "Enable public embed link"
+msgstr "Włącz publiczny odnośnik osadzenia"
+
+#: includes/premium/class-embed.php:320
+msgid "Anyone with the link below can view this page without logging in and without the site theme — useful for a kiosk tablet or an iframe embed."
+msgstr "Każda osoba, która ma poniższy odnośnik, może zobaczyć tę stronę bez logowania i bez motywu witryny. Przydaje się to na tablecie w trybie kiosku albo do osadzenia w ramce iframe."
+
+#: includes/premium/class-embed.php:325
+msgid "Public embed URL"
+msgstr "Adres URL publicznego osadzenia"
+
+#: includes/premium/class-embed.php:342
+msgid "Regenerate link (invalidates the old one)"
+msgstr "Wygeneruj odnośnik ponownie (unieważnia poprzedni)"
+
+#: includes/premium/class-embed.php:362
+msgid "You are not allowed to do that."
+msgstr "Nie masz uprawnień, żeby to zrobić."
+
+#: includes/premium/class-history-csv-export.php:91
+msgid "Choose a connection and an entity before exporting."
+msgstr "Przed eksportem wybierz połączenie i encję."
+
+#: includes/premium/class-mqtt-poll-engine.php:194
+msgid "Missing MQTT broker host in the connection settings."
+msgstr "W ustawieniach połączenia brakuje hosta brokera MQTT."
+
+#: includes/premium/class-mqtt-poll-engine.php:269
+msgid "Missing EMQX REST API URL in the connection settings."
+msgstr "W ustawieniach połączenia brakuje adresu URL REST API EMQX."
+
+#. translators: %d: HTTP status code
+#: includes/premium/class-mqtt-poll-engine.php:306
+#, php-format
+msgid "EMQX REST API returned an unexpected response code: %d."
+msgstr "REST API EMQX zwróciło nieoczekiwany kod odpowiedzi: %d."
+
+#: includes/premium/class-mqtt-poll-engine.php:316
+msgid "Invalid or unexpected response shape from the EMQX REST API."
+msgstr "REST API EMQX zwróciło odpowiedź w nieprawidłowym lub nieoczekiwanym formacie."
+
+#: includes/premium/class-renderer-chart.php:67
+msgid "Chart data is unavailable — check the connection in the [iotdw_widget] shortcode."
+msgstr "Dane wykresu są niedostępne. Sprawdź połączenie w shortcodzie [iotdw_widget]."
+
+#: includes/premium/class-renderer-chart.php:97
+msgid "History chart"
+msgstr "Wykres historii"
+
+#. translators: %s: widget label, e.g. "Living Room Temperature"
+#: includes/premium/class-renderer-chart.php:102
+#, php-format
+msgid "History chart for %s"
+msgstr "Wykres historii: %s"
+
+#: includes/premium/class-renderer-chart.php:132
+msgid "Time"
+msgstr "Czas"
+
+#: includes/premium/class-renderer-chart.php:133
+msgid "Value"
+msgstr "Wartość"
+
+#: includes/premium/connectors/class-mqtt-polling-connector.php:62
+msgid "MQTT connector is missing its connection ID."
+msgstr "Konektorowi MQTT brakuje identyfikatora połączenia."
+
+#. translators: %s: MQTT topic
+#: includes/premium/connectors/class-mqtt-polling-connector.php:80
+#, php-format
+msgid "No value received yet for MQTT topic \"%s\" — make sure the publisher sends it with the retain flag set, and that polling has run at least once."
+msgstr "Dla topicu MQTT „%s” nie odebrano jeszcze żadnej wartości. Upewnij się, że wydawca wysyła ją z flagą retain i że odpytywanie zostało uruchomione co najmniej raz."
+
+#: includes/premium/connectors/class-shelly-cloud-connector.php:89
+msgid "Missing server address, authorization key, or device ID in the connection settings."
+msgstr "W ustawieniach połączenia brakuje adresu serwera, klucza autoryzacyjnego albo identyfikatora urządzenia."
+
+#. translators: %d: HTTP status code
+#: includes/premium/connectors/class-shelly-cloud-connector.php:114
+#, php-format
+msgid "Shelly Cloud returned an unexpected response code: %d."
+msgstr "Shelly Cloud zwrócił nieoczekiwany kod odpowiedzi: %d."
+
+#: includes/premium/connectors/class-shelly-cloud-connector.php:124
+msgid "Shelly Cloud response is not valid JSON."
+msgstr "Odpowiedź Shelly Cloud nie jest poprawnym JSON-em."
+
+#. translators: %s: error code/message from Shelly Cloud, if present
+#: includes/premium/connectors/class-shelly-cloud-connector.php:132
+#, php-format
+msgid "Shelly Cloud reported an error: %s"
+msgstr "Shelly Cloud zgłosił błąd: %s"
+
+#: includes/premium/connectors/class-shelly-cloud-connector.php:133
+msgid "unknown"
+msgstr "nieznany"
+
+#: includes/premium/connectors/class-shelly-cloud-connector.php:140
+msgid "Device is offline (per Shelly Cloud)."
+msgstr "Według Shelly Cloud urządzenie jest offline."
+
+#. translators: %s: JSONPath given in the widget
+#: includes/premium/connectors/class-shelly-cloud-connector.php:151
+#, php-format
+msgid "Path \"%s\" was not found in the Shelly Cloud response."
+msgstr "Nie znaleziono ścieżki „%s” w odpowiedzi Shelly Cloud."
+
+#. translators: %s: style name, e.g. "Chart"
+#: blocks/iot-widget/src/edit.js:89
+#, js-format
+msgid "%s (Pro)"
+msgstr "%s (Pro)"
+
+#: blocks/iot-widget/src/edit.js:101
+msgid "Grid (multiple entities)"
+msgstr "Siatka (wiele encji)"
+
+#: blocks/iot-widget/src/edit.js:172
+msgid "Last hour"
+msgstr "Ostatnia godzina"
+
+#: blocks/iot-widget/src/edit.js:173
+msgid "Last 6 hours"
+msgstr "Ostatnie 6 godzin"
+
+#: blocks/iot-widget/src/edit.js:174
+msgid "Last 24 hours"
+msgstr "Ostatnie 24 godziny"
+
+#: blocks/iot-widget/src/edit.js:175
+msgid "Last 7 days"
+msgstr "Ostatnie 7 dni"
+
+#: blocks/iot-widget/src/edit.js:176
+msgid "Last 30 days"
+msgstr "Ostatnie 30 dni"
+
+#: blocks/iot-widget/src/edit.js:334
+#: blocks/iot-widget/src/grid-item-editor.js:35
+msgid "Could not load entities for this connection."
+msgstr "Nie udało się wczytać encji dla tego połączenia."
+
+#: blocks/iot-widget/src/edit.js:497
+msgid "Widget settings"
+msgstr "Ustawienia widżetu"
+
+#: blocks/iot-widget/src/edit.js:516
+msgid "No connections configured yet. Add one under IoT Data Widget → Connections."
+msgstr "Nie skonfigurowano jeszcze żadnych połączeń. Dodaj połączenie w menu IoT Data Widget → Połączenia."
+
+#: blocks/iot-widget/src/edit.js:536
+msgid "Add entity"
+msgstr "Dodaj encję"
+
+#: blocks/iot-widget/src/edit.js:540
+msgid "Add at least one entity above — each row can come from a different connection."
+msgstr "Dodaj powyżej co najmniej jedną encję. Każdy wiersz może pochodzić z innego połączenia."
+
+#: blocks/iot-widget/src/edit.js:561
+#: blocks/iot-widget/src/grid-item-editor.js:68
+msgid "Check connection settings"
+msgstr "Sprawdź ustawienia połączenia"
+
+#: blocks/iot-widget/src/edit.js:577
+#: blocks/iot-widget/src/grid-item-editor.js:77
+msgid "Filter by domain"
+msgstr "Filtruj po domenie"
+
+#: blocks/iot-widget/src/edit.js:587
+msgid "Entity (saved)"
+msgstr "Encja (zapisana)"
+
+#: blocks/iot-widget/src/edit.js:595
+msgid "Browse all entities"
+msgstr "Przeglądaj wszystkie encje"
+
+#: blocks/iot-widget/src/edit.js:639
+msgid "Home Assistant: entity ID (e.g. sensor.living_room) — pick from suggestions. Generic REST: path to the value in the JSON response (e.g. data.temperature)."
+msgstr "Home Assistant: identyfikator encji (np. sensor.salon). Wybierz go z podpowiedzi. Generic REST: ścieżka do wartości w odpowiedzi JSON (np. data.temperature)."
+
+#: blocks/iot-widget/src/edit.js:651
+msgid "Label (optional)"
+msgstr "Etykieta (opcjonalnie)"
+
+#: blocks/iot-widget/src/edit.js:652
+msgid "Overrides the label from the connector — useful for Generic REST, where it otherwise shows the raw JSON path."
+msgstr "Zastępuje etykietę z konektora. Przydaje się dla Generic REST, gdzie bez tego jest pokazywana surowa ścieżka JSON."
+
+#: blocks/iot-widget/src/edit.js:661
+msgid "Label for \"on\" (optional)"
+msgstr "Etykieta dla „włączony” (opcjonalnie)"
+
+#: blocks/iot-widget/src/edit.js:663
+msgid "Shown instead of the raw on/off-style value for on/off-style entities — e.g. \"Open\" for a contact sensor. Leave blank for the default."
+msgstr "Tekst pokazywany zamiast surowej wartości dla encji typu włączone/wyłączone, np. „Otwarte” dla czujnika kontaktowego. Zostaw puste, aby użyć domyślnej etykiety."
+
+#: blocks/iot-widget/src/edit.js:671
+msgid "Label for \"off\" (optional)"
+msgstr "Etykieta dla „wyłączony” (opcjonalnie)"
+
+#: blocks/iot-widget/src/edit.js:708
+msgid "History range"
+msgstr "Zakres historii"
+
+#: blocks/iot-widget/src/edit.js:717
+msgid "Points shown"
+msgstr "Pokazane punkty"
+
+#: blocks/iot-widget/src/edit.js:718
+msgid "Caps the sparkline to the last N points within the selected range."
+msgstr "Ogranicza mini trend do ostatnich N punktów w wybranym zakresie."
+
+#: blocks/iot-widget/src/edit.js:728
+msgid "Customize appearance for this widget"
+msgstr "Dostosuj wygląd tego widżetu"
+
+#: blocks/iot-widget/src/edit.js:731
+msgid "This widget ignores the global appearance settings below."
+msgstr "Ten widżet ignoruje globalne ustawienia wyglądu poniżej."
+
+#: blocks/iot-widget/src/edit.js:732
+msgid "This widget follows the global appearance settings (IoT Data Widget → Appearance)."
+msgstr "Ten widżet używa globalnych ustawień wyglądu (IoT Data Widget → Wygląd)."
+
+#: blocks/iot-widget/src/edit.js:821
+msgid "Chart preview isn’t available in the editor — view the published page to see it render."
+msgstr "Podgląd wykresu nie jest dostępny w edytorze. Otwórz opublikowaną stronę, żeby zobaczyć wykres."
+
+#: blocks/iot-widget/src/edit.js:831
+msgid "IoT Data Widget — select a connection and entity in the sidebar."
+msgstr "IoT Data Widget — wybierz połączenie i encję w panelu bocznym."
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block title"
+msgid "IoT Data Widget"
+msgstr "IoT Data Widget"
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block description"
+msgid "Displays a live value from Home Assistant (or another configured source) on your page."
+msgstr "Wyświetla na stronie bieżącą wartość z Home Assistanta (lub innego skonfigurowanego źródła)."
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block keyword"
+msgid "home assistant"
+msgstr "home assistant"
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block keyword"
+msgid "iot"
+msgstr "iot"
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block keyword"
+msgid "smart home"
+msgstr "dom inteligentny"
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block keyword"
+msgid "sensor"
+msgstr "czujnik"
+
+#: blocks/iot-widget/src/block.json
+msgctxt "block keyword"
+msgid "gauge"
+msgstr "wskaźnik"
+
+#. translators: %s: status colour name, e.g. "green"
+#: includes/class-renderer.php:396
+#: includes/class-shortcode.php:734
+#: includes/premium/class-embed.php:231
+#, php-format
+msgid "Status: %s"
+msgstr "Status: %s"
+
+#: includes/class-state-rules.php:141
+msgid "green"
+msgstr "zielony"
+
+#: includes/class-state-rules.php:142
+msgid "yellow"
+msgstr "żółty"
+
+#: includes/class-state-rules.php:143
+msgid "red"
+msgstr "czerwony"
+
+#: includes/class-state-rules.php:144
+msgid "grey"
+msgstr "szary"
+
+#: blocks/iot-widget/src/edit.js:682
+msgid "Status rules"
+msgstr "Reguły statusu"
+
+#: blocks/iot-widget/src/state-rules-editor.js:13
+msgid "No colour"
+msgstr "Bez koloru"
+
+#: blocks/iot-widget/src/state-rules-editor.js:14
+msgid "Green"
+msgstr "Zielony"
+
+#: blocks/iot-widget/src/state-rules-editor.js:15
+msgid "Yellow"
+msgstr "Żółty"
+
+#: blocks/iot-widget/src/state-rules-editor.js:16
+msgid "Red"
+msgstr "Czerwony"
+
+#: blocks/iot-widget/src/state-rules-editor.js:17
+msgid "Grey"
+msgstr "Szary"
+
+#: blocks/iot-widget/src/state-rules-editor.js:101
+msgid "Show a text and a status colour instead of the raw value. Condition: a number (e.g. 1), a range 18..24 (from 18, below 24), ..18 (below 18), 24.. (24 and above) or a state text such as heat or off. The first matching rule wins."
+msgstr "Pokaż tekst i kolor statusu zamiast surowej wartości. Warunek to liczba (np. 1), zakres 18..24 (od 18, poniżej 24), ..18 (poniżej 18), 24.. (24 i więcej) albo tekst stanu, np. heat lub off. Obowiązuje pierwsza pasująca reguła."
+
+#. translators: %d: rule number
+#: blocks/iot-widget/src/state-rules-editor.js:117
+#, js-format
+msgid "Rule %d"
+msgstr "Reguła %d"
+
+#: blocks/iot-widget/src/state-rules-editor.js:122
+msgid "When the value is"
+msgstr "Gdy wartość to"
+
+#: blocks/iot-widget/src/state-rules-editor.js:130
+msgid "Use a number, a range such as 18..24, ..18 or 24.., or a state text such as heat"
+msgstr "Wpisz liczbę, zakres, np. 18..24, ..18 lub 24.., albo tekst stanu, np. heat"
+
+#: blocks/iot-widget/src/state-rules-editor.js:141
+msgid "Show text (optional)"
+msgstr "Pokaż tekst (opcjonalnie)"
+
+#: blocks/iot-widget/src/state-rules-editor.js:149
+msgid "Status colour"
+msgstr "Kolor statusu"
+
+#: blocks/iot-widget/src/state-rules-editor.js:167
+msgid "Remove rule"
+msgstr "Usuń regułę"
+
+#: blocks/iot-widget/src/state-rules-editor.js:185
+msgid "Add rule"
+msgstr "Dodaj regułę"
+
+
+#. translators: %s: plugin name.
+#, php-format
+msgid "Is %s working well for you? A short review on WordPress.org helps other site owners find it — and helps me, a solo developer, keep improving it."
+msgstr "Czy %s dobrze się sprawdza? Krótka opinia na WordPress.org pomaga innym właścicielom witryn znaleźć wtyczkę. Pomaga też w dalszym rozwoju wtyczki, którą tworzy jedna osoba."
+
+msgid "Leave a review"
+msgstr "Napisz opinię"
+
+msgid "Maybe later"
+msgstr "Może później"
+
+msgid "I already did"
+msgstr "Opinia już wystawiona"
+
+msgid "Something not working? Ask on the support forum"
+msgstr "Coś nie działa? Zapytaj na forum wsparcia"
+
+msgid "The link has expired. Go back and try again."
+msgstr "Odnośnik wygasł. Wróć i spróbuj ponownie."
+
+#. translators: %s: entity ID
+#: includes/connectors/class-ha-connector.php:105
+msgid "Entity \"%s\" is unavailable in Home Assistant."
+msgstr "Encja „%s” jest niedostępna w Home Assistancie."
+
+
+#: includes/class-renderer.php
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: includes/class-renderer.php
+msgid "%1$s: measurement unavailable"
+msgstr "%1$s: pomiar niedostępny"
+
+#: includes/class-renderer.php
+msgid "No measurement available."
+msgstr "Brak dostępnego pomiaru."
+
+#: admin/views/wizard/step-3-entity.php:52
+msgid "The entity ID contains characters that are not allowed. Do not use a percent sign followed by two letters or digits (for example %ab), HTML tags or line breaks. Correct the ID and try again."
+msgstr "Identyfikator encji zawiera niedozwolone znaki. Nie używaj znaku procentu z dwiema literami lub cyframi (np. %ab), znaczników HTML ani podziałów wierszy. Popraw identyfikator i spróbuj ponownie."

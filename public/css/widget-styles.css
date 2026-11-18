@@ -1,0 +1,395 @@
+/*
+ * Wrapper z IOTDW_Shortcode::render() — celowo bez szerokości/marginesów
+ * poziomych: dostaje je od motywu jak każdy inny blok (kolumna treści).
+ * Odstęp między dwoma widgetami pod rząd przez :where() (zerowa
+ * specyficzność) — motywy blokowe (blockGap) i tak go nadpisują swoim.
+ */
+:where(.iot-dw-widget-wrap + .iot-dw-widget-wrap) {
+	margin-top: 1em;
+}
+
+.iot-dw-widget {
+	display: inline-block;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/*
+ * v1.8 Tydzień 7 — technika "visually hidden": treść obecna w DOM (więc
+ * czytelna dla czytników ekranu i crawlerów bez wykonywania JS), ale
+ * niewidoczna wizualnie. CELOWO NIE `display: none`/`visibility: hidden` —
+ * oba te sposoby usuwają element z drzewa dostępności, więc czytnik ekranu
+ * też by go pominął (patrz Ustalenie #3 planu v1.8, docs/archiwum/mvp-v1-8-plan.md).
+ * Używane jako OPAKOWANIE (zawsze `<div>`, nigdy bezpośrednio na `<table>`
+ * — patrz IOT_DW_Renderer::history_table_html()) wokół ukrytej tabeli
+ * danych obok <canvas>/SVG w stylach "chart"/"sparkline" — jedyne miejsce w
+ * całej wtyczce, gdzie dane liczbowe istnieją TYLKO w postaci bitmapy/
+ * wektora bez odpowiednika w tekście, więc wymaga osobnego, tekstowego
+ * źródła prawdy w markupie. Znalezione na żywo (Tydzień 7): nałożenie tej
+ * klasy WPROST na `<table>` z wieloma wierszami realnego tekstu nie
+ * działało niezawodnie — wiersze tabeli mają własny algorytm liczenia
+ * wysokości, ignorujący `height: 1px` na samym elemencie `<table>`
+ * niezależnie od `overflow`/`!important` (realny box wychodził na setki
+ * px, potwierdzone boundingBox() w Playwright, nie tylko computed style).
+ * `<div>`-opakowanie nie ma tego problemu. `!important` na wypadek stylów
+ * motywu dla "table w obszarze treści" (np. ".entry-content table" w
+ * Twenty Twenty-Five) o wyższej specyficzności niż sama klasa.
+ */
+.iot-dw-widget__sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect( 0, 0, 0, 0 ) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.iot-dw-widget--card {
+	padding: var( --iot-dw-space-lg, 1em ) var( --iot-dw-space-xl, 1.5em );
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fff;
+	text-align: center;
+	box-shadow: var( --iot-dw-shadow-sm, 0 1px 2px rgba( 0, 0, 0, 0.06 ) );
+}
+
+/*
+ * v1.8 Tydzień 6 — miejsce na ikonę typu encji (patrz
+ * IOT_DW_Renderer::icon_for_entity(), tylko styl "card" per plan — "grid"
+ * dzieli tę samą klasę znacznika etykiety, ale bez ikony w PHP). flex
+ * zamiast block, żeby ikona i tekst etykiety siedziały w jednym wierszu z
+ * równym odstępem. Zmiana z block na flex psuje dziedziczone
+ * `text-align: center` z .iot-dw-widget--card/.iot-dw-widget__grid-cell
+ * (text-align nie działa na dzieci flex) — stąd jawne justify-content
+ * niżej, żeby oba te konteksty zostały wyśrodkowane jak przed tą zmianą.
+ */
+.iot-dw-widget__label {
+	display: flex;
+	align-items: center;
+	gap: var( --iot-dw-space-2xs, 0.25em );
+	font-size: var( --iot-dw-text-xs, 0.85em );
+	color: #222;
+	opacity: 0.7;
+	margin-bottom: var( --iot-dw-space-2xs, 0.25em );
+}
+
+.iot-dw-widget--card .iot-dw-widget__label,
+.iot-dw-widget__grid-cell .iot-dw-widget__label {
+	justify-content: center;
+}
+
+.iot-dw-widget__type-icon {
+	width: 1em;
+	height: 1em;
+	flex: 0 0 auto;
+}
+
+.iot-dw-widget__value {
+	display: block;
+	font-size: var( --iot-dw-text-xl, 2em );
+	font-weight: var( --iot-dw-weight-semibold, 600 );
+	color: #222;
+}
+
+.iot-dw-widget__unit {
+	/* Relacja 0.5em jest CELOWO lokalna, nie tokenem — to połowa rozmiaru
+	   rodzica (.iot-dw-widget__value, już wyrażonego przez --iot-dw-text-xl),
+	   nie jeden z nazwanych kroków skali względem bazowego --iot-dw-font-size. */
+	font-size: 0.5em;
+	font-weight: var( --iot-dw-weight-regular, 400 );
+	color: #222;
+	opacity: 0.7;
+	margin-left: var( --iot-dw-space-3xs, 0.15em );
+}
+
+/*
+ * #b32d2f (v1.7 Tydzień 8, a11y) — nie #d63638 (wp-admin's own error red).
+ * #d63638 na tym jasnoróżowym tle daje tylko 4.25:1, poniżej progu WCAG AA
+ * 4.5:1 dla zwykłego tekstu (wyliczone, nie ocenione "na oko" — patrz
+ * docs/archiwum/audyt-a11y-v1-7.md). #d63638 samo w sobie jest w porządku na BIAŁYM
+ * tle (4.73:1, tak używane w panelu admina) — problem jest specyficzny dla
+ * tego różowego tła. #b32d2f daje 5.66:1 z wyraźnym marginesem.
+ */
+.iot-dw-widget--error {
+	display: flex;
+	align-items: flex-start;
+	gap: var( --iot-dw-space-sm, 0.5em );
+	padding: var( --iot-dw-space-md, 0.75em ) var( --iot-dw-space-lg, 1em );
+	border: 1px solid #b32d2f;
+	border-radius: var( --iot-dw-radius-sm, 4px );
+	background: #fcf0f1;
+	color: #b32d2f;
+	font-size: var( --iot-dw-text-sm, 0.9em );
+}
+
+/*
+ * Ikona błędu (v1.7 Tydzień 7) — współdzielona przez stan błędu pojedynczej
+ * encji (.iot-dw-widget--error) i błąd pojedynczego wiersza/komórki w
+ * stylach list/grid (.iot-dw-widget__list-error) — patrz
+ * IOT_DW_Renderer::error_icon_svg(). `currentColor` dziedziczy kolor z
+ * rodzica, więc oba miejsca używają dokładnie tego samego odcienia bez
+ * duplikowania wartości koloru.
+ */
+.iot-dw-widget__error-icon {
+	flex: 0 0 auto;
+	width: 1.1em;
+	height: 1.1em;
+	margin-top: var( --iot-dw-space-3xs, 0.15em );
+}
+
+.iot-dw-widget__error-text {
+	flex: 1 1 auto;
+}
+
+.iot-dw-widget--list {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fff;
+	overflow: hidden;
+	box-shadow: var( --iot-dw-shadow-sm, 0 1px 2px rgba( 0, 0, 0, 0.06 ) );
+}
+
+.iot-dw-widget__list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: var( --iot-dw-space-sm, 0.6em ) var( --iot-dw-space-lg, 1em );
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.iot-dw-widget__list-item:last-child {
+	border-bottom: none;
+}
+
+/* Odrębna klasa od .iot-dw-widget__label (ta sama idea — ikona + tekst w
+   jednym wierszu, patrz komentarz przy .iot-dw-widget__label), bo "list" ma
+   swój własny znacznik etykiety, nieużywany przez "card"/"grid". */
+.iot-dw-widget__list-label {
+	display: inline-flex;
+	align-items: center;
+	gap: var( --iot-dw-space-2xs, 0.25em );
+	color: #222;
+	opacity: 0.7;
+	font-size: var( --iot-dw-text-sm, 0.9em );
+}
+
+.iot-dw-widget__list-value {
+	font-weight: var( --iot-dw-weight-semibold, 600 );
+	color: #222;
+}
+
+.iot-dw-widget__list-error {
+	display: inline-flex;
+	align-items: center;
+	gap: var( --iot-dw-space-xs, 0.35em );
+	color: #b32d2f;
+	font-size: var( --iot-dw-text-xs, 0.85em );
+}
+
+.iot-dw-widget__list-error .iot-dw-widget__error-icon {
+	width: 1em;
+	height: 1em;
+	margin-top: 0;
+}
+
+/*
+ * v1.8 Tydzień 6 — gauge dostaje tę samą "kartę" (obramowanie/tło/cień) co
+ * card/list/sparkline/grid/chart, żeby wszystkie 5 stylów wyglądało jak
+ * jedna spójna rodzina na stronie z kilkoma widgetami naraz, zamiast gauge
+ * "pływającego" bez żadnej krawędzi obok czterech oprawionych sąsiadów
+ * (patrz demo — widoczne na żywo przed tą zmianą). background/border-radius
+ * dziedziczą z tych samych zmiennych --iot-dw-bg/--iot-dw-radius co reszta
+ * (patrz widget-theme.css), więc personalizacja z v1.5 działa identycznie.
+ */
+.iot-dw-widget--gauge {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 220px;
+	box-sizing: border-box;
+	padding: var( --iot-dw-space-lg, 1em ) var( --iot-dw-space-xl, 1.5em );
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: var( --iot-dw-shadow-sm, 0 1px 2px rgba( 0, 0, 0, 0.06 ) );
+}
+
+.iot-dw-widget__gauge-svg {
+	width: 100%;
+	height: auto;
+}
+
+.iot-dw-widget__gauge-track {
+	stroke: #e0e0e0;
+}
+
+.iot-dw-widget__gauge-fill {
+	stroke: #2980b9;
+	transition: stroke-dashoffset 0.3s ease;
+}
+
+.iot-dw-widget__gauge-value {
+	font-size: var( --iot-dw-text-lg, 1.4em );
+	font-weight: var( --iot-dw-weight-semibold, 600 );
+	fill: #222;
+}
+
+.iot-dw-widget--sparkline {
+	display: inline-flex;
+	flex-direction: column;
+	padding: var( --iot-dw-space-md, 0.75em ) var( --iot-dw-space-lg, 1em );
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fff;
+	min-width: 140px;
+	box-shadow: var( --iot-dw-shadow-sm, 0 1px 2px rgba( 0, 0, 0, 0.06 ) );
+}
+
+.iot-dw-widget--sparkline .iot-dw-widget__value {
+	font-size: var( --iot-dw-text-lg, 1.4em );
+	margin: var( --iot-dw-space-3xs, 0.15em ) 0 var( --iot-dw-space-xs, 0.35em );
+}
+
+.iot-dw-widget__sparkline-svg {
+	width: 100%;
+	height: 30px;
+	display: block;
+	overflow: visible;
+}
+
+.iot-dw-widget__sparkline-line {
+	stroke: #2980b9;
+	stroke-width: 1.5;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+
+.iot-dw-widget--grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: var( --iot-dw-space-lg, 1em );
+	width: 100%;
+}
+
+.iot-dw-widget__grid-cell {
+	padding: var( --iot-dw-space-lg, 1em ) var( --iot-dw-space-xl, 1.5em );
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fff;
+	text-align: center;
+	box-shadow: var( --iot-dw-shadow-sm, 0 1px 2px rgba( 0, 0, 0, 0.06 ) );
+}
+
+.iot-dw-widget__grid-cell--error {
+	border-color: #b32d2f;
+	background: #fcf0f1;
+}
+
+/*
+ * "Dane są stare" (v2.0, docs/archiwum/mvp-v2-0-push-mode-plan.md §5) — kanał push
+ * mógł przestać wysyłać dane bez żadnego jawnego błędu połączenia (w
+ * przeciwieństwie do pull, gdzie zerwane połączenie daje czytelny błąd od
+ * razu). Wyszarzenie + znacznik czasu zamiast udawania świeżości — patrz
+ * IOT_DW_Renderer::is_stale()/stale_badge_html(). Sama wartość (nie cała
+ * karta) traci nasycenie, żeby wciąż dało się ją odczytać, tylko wyraźnie
+ * "przygaszoną" względem świeżych sąsiadów (np. w gridzie/liście).
+ */
+.iot-dw-widget--stale .iot-dw-widget__value,
+.iot-dw-widget--stale .iot-dw-widget__list-value,
+.iot-dw-widget--stale .iot-dw-widget__gauge-value {
+	opacity: 0.55;
+	filter: saturate( 0.4 );
+}
+
+.iot-dw-widget__stale-badge {
+	display: block;
+	font-size: var( --iot-dw-text-2xs, 0.75em );
+	color: #996800;
+	margin-top: var( --iot-dw-space-xs, 0.25em );
+}
+
+.iot-dw-widget__list-item .iot-dw-widget__stale-badge {
+	display: inline-block;
+	margin-top: 0;
+	margin-left: var( --iot-dw-space-xs, 0.25em );
+}
+
+.iot-dw-branding {
+	font-size: var( --iot-dw-text-2xs, 0.75em );
+	color: #999;
+	text-align: right;
+	margin: var( --iot-dw-space-sm, 0.5em ) 0 0;
+}
+
+/*
+ * v1.8 Tydzień 4 — wskaźnik "odświeżanie" (public/js/widget-refresh.js
+ * ustawia/usuwa atrybut data-iot-dw-refreshing na tym samym elemencie, który
+ * niesie data-iot-dw-connection/entity — patrz komentarz w
+ * IOT_DW_Renderer::refresh_data_attr()). Celowo tylko na samej wartości, nie
+ * na całej karcie/wierszu — subtelny sygnał "coś się dzieje", nie migająca
+ * cała powierzchnia widgetu. Całość wewnątrz `prefers-reduced-motion:
+ * no-preference` — dla użytkowników, którzy poprosili system o mniej ruchu,
+ * animacja w ogóle się nie uruchamia (widget po prostu czeka bez
+ * pulsowania), zamiast próbować dać "spokojniejszą" wersję tej samej animacji.
+ */
+@media (prefers-reduced-motion: no-preference) {
+	[data-iot-dw-refreshing] .iot-dw-widget__value,
+	[data-iot-dw-refreshing] .iot-dw-widget__list-value,
+	[data-iot-dw-refreshing] .iot-dw-widget__gauge-value {
+		animation: iot-dw-widget-refresh-pulse 1.4s ease-in-out infinite;
+	}
+
+	@keyframes iot-dw-widget-refresh-pulse {
+		0%,
+		100% {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0.6;
+		}
+	}
+}
+
+
+/* Mapowanie stanów (1.0.4): kropka statusu przed wartością i linia statusu
+   pod gauge'em. Obwódka zapewnia kontrast kropki także na jasnym tle
+   (żółty), kolor nigdy nie jest jedyną informacją — patrz IOTDW_Renderer. */
+.iot-dw-widget__state-dot {
+	display: inline-block;
+	width: 0.7em;
+	height: 0.7em;
+	margin-right: 0.4em;
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+	vertical-align: 0.05em;
+}
+
+.iot-dw-widget__state-dot--green {
+	background: #2e7d32;
+}
+
+.iot-dw-widget__state-dot--yellow {
+	background: #f9a825;
+}
+
+.iot-dw-widget__state-dot--red {
+	background: #c62828;
+}
+
+.iot-dw-widget__state-dot--grey {
+	background: #8a8a8a;
+}
+
+.iot-dw-widget__state {
+	display: block;
+	margin-top: 0.25em;
+	font-size: 0.9em;
+}

@@ -1,0 +1,156 @@
+/**
+ * Appearance variables and Design System v1 for Free components.
+ * Existing --iot-dw-bg/text/accent/radius/font-size overrides retain precedence.
+ * Legacy component rules remain for Pro consumers; the v1 layer is scoped below.
+ */
+
+.iot-dw-widget {
+	font-size: var( --iot-dw-font-size, 16px );
+}
+
+/*
+ * v1.8 Tydzień 6: ".iot-dw-widget--gauge" dołączone tu po raz pierwszy (od
+ * teraz ma własne tło/obramowanie, patrz widget-styles.css) i
+ * ".iot-dw-widget--chart" — poprzednio POMINIĘTY tutaj (luka sprzed v1.8,
+ * znaleziona przy okazji tego tygodnia): wykres miał zahardkodowane
+ * background:#fff w chart-widget.css, więc przy ciemnym tle z Appearance
+ * (v1.5) każdy inny styl ciemniał, a wykres zostawał jasny. Naprawione tu,
+ * nie w osobnym poprawkowym tygodniu — to dokładnie ten sam mechanizm co
+ * reszta, tylko wcześniej nigdy nie podłączony.
+ */
+.iot-dw-widget--card,
+.iot-dw-widget--list,
+.iot-dw-widget--sparkline,
+.iot-dw-widget--gauge,
+.iot-dw-widget--chart,
+.iot-dw-widget__grid-cell {
+	background: var( --iot-dw-bg, #fff );
+	border-radius: var( --iot-dw-radius, 8px );
+}
+
+.iot-dw-widget__value,
+.iot-dw-widget__list-value {
+	color: var( --iot-dw-text, #222 );
+}
+
+/**
+ * v1.7 Tydzień 8 (a11y): etykiety/jednostki dziedziczą ten sam kolor co
+ * wartość (przez opacity w widget-styles.css, nie osobny odcień szarości)
+ * — sprawdzone wyliczeniem WCAG (docs/archiwum/audyt-a11y-v1-7.md): niezależny,
+ * zahardkodowany #666 dawał tylko ok. 2.97:1 na ciemnym tle (np. tekst
+ * #fff na tle #1a1a2e — poprawna, realna kombinacja z personalizacji
+ * v1.5), poniżej progu AA 4.5:1. Powiązanie z --iot-dw-text skaluje się
+ * poprawnie z dowolnym wybranym motywem, zamiast łamać się przy ciemnych
+ * tłach.
+ */
+.iot-dw-widget__label,
+.iot-dw-widget__unit,
+.iot-dw-widget__list-label {
+	color: var( --iot-dw-text, #222 );
+}
+
+.iot-dw-widget__gauge-value {
+	fill: var( --iot-dw-text, #222 );
+}
+
+.iot-dw-widget__gauge-fill,
+.iot-dw-widget__sparkline-line {
+	stroke: var( --iot-dw-accent, #2980b9 );
+}
+
+/* Design System v1 — Free components. Existing appearance variables take precedence. */
+.iot-dw-widget:is(.iot-dw-widget--card, .iot-dw-widget--list, .iot-dw-widget--gauge) {
+	box-sizing: border-box;
+	container-type: inline-size;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-variant-numeric: tabular-nums;
+	line-height: 1.5;
+	color: var(--iot-dw-foreground);
+	background: var(--iot-dw-surface);
+	border: 1px solid var(--iot-dw-border);
+	border-top: 3px solid var(--iot-dw-brand);
+	border-radius: var(--iot-dw-radius, 12px);
+	box-shadow: var(--iot-dw-card-shadow);
+	overflow-wrap: anywhere;
+}
+.iot-dw-widget--card, .iot-dw-widget--gauge { padding: var(--iot-dw-card-space); }
+.iot-dw-widget--card { text-align: left; }
+.iot-dw-widget--card .iot-dw-widget__label { justify-content: flex-start; }
+.iot-dw-widget:is(.iot-dw-widget--card, .iot-dw-widget--gauge) .iot-dw-widget__label,
+.iot-dw-widget--list .iot-dw-widget__list-label {
+	min-width: 0;
+	color: var(--iot-dw-muted);
+	opacity: 1;
+	font-weight: 550;
+	line-height: 1.45;
+}
+.iot-dw-widget--card .iot-dw-widget__value {
+	font-size: 2.65em;
+	font-size: clamp(2.4em, 14cqi, 2.65em);
+	font-weight: 650;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	color: var(--iot-dw-foreground);
+}
+.iot-dw-widget--card .iot-dw-widget__unit {
+	color: var(--iot-dw-muted);
+	font-size: 0.42em;
+	opacity: 1;
+}
+.iot-dw-widget--list .iot-dw-widget__list-item { gap: 0.5em 1em; flex-wrap: wrap; padding: 1em 1.25em; border-color: var(--iot-dw-border); }
+.iot-dw-widget--list .iot-dw-widget__list-label { flex: 1 1 9em; }
+.iot-dw-widget--list .iot-dw-widget__list-value { min-width: 0; color: var(--iot-dw-foreground); }
+.iot-dw-widget--gauge .iot-dw-widget__gauge-svg { max-width: 260px; }
+.iot-dw-widget--gauge .iot-dw-widget__label { justify-content: center; text-align: center; margin-top: 0.5em; }
+.iot-dw-widget--gauge .iot-dw-widget__gauge-track { stroke: var(--iot-dw-border); }
+.iot-dw-widget--gauge .iot-dw-widget__gauge-fill { stroke: var(--iot-dw-brand); }
+.iot-dw-widget--gauge:has(.iot-dw-widget__gauge-fill[stroke-dasharray="0"]) .iot-dw-widget__gauge-value { font-size: 0.78em; }
+.iot-dw-widget:is(.iot-dw-widget--card, .iot-dw-widget--list, .iot-dw-widget--gauge) .iot-dw-widget__stale-badge {
+	color: var(--iot-dw-foreground);
+	border-left: 3px solid var(--iot-dw-warning);
+	padding: 0.25em 0.5em;
+	margin-top: 0.75em;
+	font-size: 0.8125em;
+}
+.iot-dw-widget--error { border-radius: var(--iot-dw-radius, 12px); color: #ad343e; background: #fff0f1; border-color: #ad343e; }
+.iot-dw-widget:is(.iot-dw-widget--card, .iot-dw-widget--list, .iot-dw-widget--gauge, .iot-dw-widget--error) :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+/* A missing Gauge measurement has a track, not a full indicator. */
+.iot-dw-widget--gauge .iot-dw-widget__gauge-fill[stroke-dasharray="0"] { visibility: hidden; }
+
+.iot-dw-widget--list .iot-dw-widget__unit { font-size: 0.875em; opacity: 1; color: var(--iot-dw-muted); }
+
+/* Gauge text flows outside the SVG, including asynchronous value updates. */
+.iot-dw-widget--gauge .iot-dw-widget__gauge-value { display: block; max-width: 100%; margin-top: 0.5em; font-size: 1.6em; line-height: 1.35; color: var(--iot-dw-foreground); text-align: center; overflow-wrap: anywhere; }
+.iot-dw-widget--gauge:has(.iot-dw-widget__gauge-fill[stroke-dasharray="0"]) .iot-dw-widget__gauge-value { font-size: 0.95em; font-weight: 500; }
+
+/*
+ * 1.0.10: stale state looks the same in Card, Status list and Gauge. In the
+ * list the --stale class sits on the <li>, on Card/Gauge on the wrapper — both
+ * are matched here, after the per-style colour rules. A muted colour instead of
+ * opacity keeps the value readable (about 5:1 on the default surface).
+ */
+:is(.iot-dw-widget.iot-dw-widget--stale, .iot-dw-widget--list .iot-dw-widget--stale) :is(.iot-dw-widget__value, .iot-dw-widget__list-value, .iot-dw-widget__gauge-value) {
+	opacity: 1;
+	filter: none;
+	color: color-mix(in srgb, var(--iot-dw-foreground) 65%, var(--iot-dw-surface));
+}
+/*
+ * 1.0.11: the stale notice wraps in narrow containers (220 px, larger font,
+ * longer translations) instead of overflowing or being clipped. Only
+ * presentation changes; how stale is determined is untouched.
+ */
+.iot-dw-widget__stale-badge { max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; }
+.iot-dw-widget__stale-text { white-space: normal; }
+.iot-dw-widget__stale-text::before {
+	content: "";
+	display: inline-block;
+	width: 0.6em;
+	height: 0.6em;
+	margin: 0 0.35em 0 0.25em;
+	border-radius: 50%;
+	background: var(--iot-dw-warning);
+}

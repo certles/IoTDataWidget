@@ -1,0 +1,62 @@
+/**
+ * Modal ankiety przy deaktywacji (poprawka 2.2, docs/archiwum/poprawki-ogolne.md) —
+ * osobny, mały arkusz zamiast admin-toolkit.css, bo ten drugi ładuje się
+ * tylko na stronach wtyczki (dopasowanie "iot-data-widget" w hook_suffix),
+ * a ten modal celowo pojawia się na wbudowanym ekranie Wtyczki (plugins.php),
+ * poza tym dopasowaniem.
+ */
+.iot-dw-deactivation-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.iot-dw-deactivation-dialog {
+	position: relative;
+	background: #fff;
+	border-radius: 4px;
+	padding: 24px;
+	max-width: 420px;
+	width: 90%;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.iot-dw-deactivation-dialog__close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	line-height: 1;
+	cursor: pointer;
+	padding: 4px 8px;
+	color: #646970;
+}
+
+.iot-dw-deactivation-dialog h2 {
+	margin-top: 0;
+}
+
+.iot-dw-deactivation-dialog__reason {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.iot-dw-deactivation-dialog__message {
+	width: 100%;
+	margin-top: 8px;
+	box-sizing: border-box;
+}
+
+.iot-dw-deactivation-dialog__actions {
+	margin-top: 16px;
+	margin-bottom: 0;
+}

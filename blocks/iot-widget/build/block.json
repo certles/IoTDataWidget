@@ -1,0 +1,100 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "iot-data-widget/widget",
+  "title": "IoT Data Widget",
+  "category": "widgets",
+  "icon": "chart-line",
+  "description": "Displays a live value from Home Assistant (or another configured source) on your page.",
+  "keywords": [
+    "home assistant",
+    "iot",
+    "smart home",
+    "sensor",
+    "gauge"
+  ],
+  "textdomain": "iot-data-widget",
+  "attributes": {
+    "connection": {
+      "type": "string",
+      "default": ""
+    },
+    "style": {
+      "type": "string",
+      "default": "card"
+    },
+    "entity": {
+      "type": "string",
+      "default": ""
+    },
+    "entities": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "string",
+      "default": ""
+    },
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "onLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "offLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "states": {
+      "type": "string",
+      "default": ""
+    },
+    "min": {
+      "type": "number",
+      "default": 0
+    },
+    "max": {
+      "type": "number",
+      "default": 100
+    },
+    "range": {
+      "type": "string",
+      "default": "24h"
+    },
+    "points": {
+      "type": "number",
+      "default": 20
+    },
+    "styleMode": {
+      "type": "string",
+      "default": "default"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#222222"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#2980b9"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 16
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}
