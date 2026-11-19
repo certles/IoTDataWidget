@@ -1,6 +1,6 @@
 === IoT Data Widget – Home Assistant, MQTT & Smart Home Sensors ===
 Contributors: wpveloxa
-Tags: home assistant, iot, smart-home, mqtt, sensor
+Tags: home assistant, temperature, smart-home, mqtt, sensor
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -8,7 +8,7 @@ Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Show current data from smart home devices on your WordPress site with a shortcode or block. Pro adds more data sources, history graphs and alerts.
+Show Home Assistant and smart home sensor readings on your WordPress site with a shortcode or block. Pro adds more sources, history charts and alerts.
 
 == Description ==
 
