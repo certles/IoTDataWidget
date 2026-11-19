@@ -8,11 +8,11 @@ Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Show live data from your smart home devices on your WordPress site with a shortcode or block. Pro adds more data sources, history graphs and alerts.
+Show current data from smart home devices on your WordPress site with a shortcode or block. Pro adds more data sources, history graphs and alerts.
 
 == Description ==
 
-IoT Data Widget lets you embed live values from smart home sensors and devices — temperature, humidity, tank levels, device status, anything with a numeric or text value — on any WordPress page or post. Activating the plugin drops you straight into a guided setup wizard that gets you from "no connection" to a working widget and a ready-to-paste shortcode in a few clicks.
+IoT Data Widget lets you embed current values from smart home sensors and devices — temperature, humidity, tank levels, device status, anything with a numeric or text value — on any WordPress page or post. Activating the plugin drops you straight into a guided setup wizard that gets you from "no connection" to a working widget and a ready-to-paste shortcode in a few clicks.
 
 The free version is fully functional, not a crippled trial: unlimited connections, Home Assistant, push mode, Generic REST, the Card/Status list/Gauge display styles, the shortcode and Gutenberg block, the setup wizard, and the diagnostics page all work with no time limit and no license. Pro adds more data sources, history graphs and alerts.
 
@@ -20,7 +20,7 @@ The free version is fully functional, not a crippled trial: unlimited connection
 
 * A "conditions right now" box on a guesthouse or holiday-rental site: outdoor temperature, room temperatures, humidity.
 * A status panel for a workshop, greenhouse or server room: a pump or relay shown as "Running" with a green dot, a tank level on a gauge.
-* A kiosk tablet or lobby screen with a full-screen, theme-free page of live values (Pro).
+* A kiosk tablet or lobby screen with a full-screen, theme-free page of current values (Pro).
 * An alert by email or webhook when a freezer, aquarium or boiler leaves its safe range (Pro).
 
 = Data sources =
@@ -69,7 +69,7 @@ Every other outbound request goes only to the URL/host **you** configure for a c
 
 == Screenshots ==
 
-1. Card, gauge and list widgets showing live values on a page.
+1. Card, gauge and list widgets showing current values on a page.
 2. The setup wizard previews the widget and gives you a ready-to-paste shortcode.
 3. Insert the IoT Widget block and choose the connection, entity and style in the sidebar.
 4. The wizard starts by asking where your site runs, so the device and WordPress can actually reach each other.
