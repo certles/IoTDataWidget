@@ -1,6 +1,6 @@
 # IoT Data Widget — Home Assistant, MQTT & Smart Home Sensors
 
-Show live values from your smart home devices — temperature, humidity, tank levels, device status — on any WordPress page, with a shortcode or a Gutenberg block.
+Show current values from your smart home devices — temperature, humidity, tank levels, device status — on any WordPress page, with a shortcode or a Gutenberg block.
 
 [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/iot-data-widget?label=WordPress.org)](https://wordpress.org/plugins/iot-data-widget/)
 [![License: GPL v2 or later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE)
